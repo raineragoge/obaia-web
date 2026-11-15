@@ -1,0 +1,95 @@
+/* Photo controls use the same ink, typography and capsules as the menu. */
+html { scrollbar-gutter: stable; }
+.product-info { min-width: 0; flex: 1; }
+.product-photo-trigger {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  width: 100%; min-height: 44px; padding: 3px 0; border: 0;
+  color: inherit; background: transparent; font: inherit; text-transform: inherit;
+  text-align: left; cursor: pointer; border-radius: 4px;
+}
+.photo-product-name {
+  text-decoration: none;
+  transition: transform .5s var(--obaia-ease);
+}
+.product-photo-cue {
+  display: inline-flex; align-items: center; gap: 7px; flex: none;
+  font-size: 9px; font-weight: 600; letter-spacing: .04em; white-space: nowrap;
+  color: var(--baie); opacity: .72; transition: opacity .3s ease;
+}
+.product-photo-cue svg {
+  width: 30px; height: 30px; padding: 6px; border: 1px solid rgb(117 27 56 / 28%);
+  border-radius: 50%; transition: color .35s ease,background .35s ease,transform .5s var(--obaia-ease);
+}
+.product-photo-trigger:hover .photo-product-name,
+.product-photo-trigger:focus-visible .photo-product-name { transform: translateX(3px); }
+.product-photo-trigger:hover .product-photo-cue,
+.product-photo-trigger:focus-visible .product-photo-cue { opacity: 1; }
+.product-photo-trigger:hover .product-photo-cue svg,
+.product-photo-trigger:focus-visible .product-photo-cue svg { color: var(--white); background: var(--baie); transform: rotate(-8deg); }
+
+
+.product-photo-dialog {
+  width: min(1040px,calc(100vw - 40px)); max-width: none; max-height: calc(100dvh - 40px);
+  margin: auto; padding: 0; border: 0; border-radius: 28px;
+  background: var(--white); color: var(--baie); overflow: auto;
+  box-shadow: 0 30px 100px rgb(0 0 0 / 18%);
+  opacity: 0; transform: translate3d(0,28px,0) scale(.975);
+  transition: opacity .32s ease,transform .65s var(--obaia-ease);
+}
+.product-photo-dialog::backdrop { background: rgb(59 14 28 / 0%); backdrop-filter: blur(0); transition: background .4s ease,backdrop-filter .4s ease; }
+.product-photo-dialog.is-open { opacity: 1; transform: none; }
+.product-photo-dialog.is-open::backdrop { background: rgb(59 14 28 / 78%); backdrop-filter: blur(6px); }
+.product-photo-card { display: grid; grid-template-columns: 1.35fr 1fr; position: relative; min-height: 460px; }
+.product-photo-media { position: relative; min-width: 0; overflow: hidden; background: #f5edde; }
+.product-photo-media > img {
+  position: relative; display: block; width: 100%; height: 100%; min-height: 460px;
+  object-fit: cover; opacity: 0; transform: scale(1.06);
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path .9s var(--obaia-ease),transform 1.3s var(--obaia-ease),opacity .5s ease;
+}
+.product-photo-dialog.is-open.image-ready .product-photo-media > img { opacity: 1; transform: none; clip-path: inset(0); }
+.product-photo-loading {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  opacity: .55; transition: opacity .35s ease; pointer-events: none;
+}
+.product-photo-loading img { width: 64px; height: 80px; object-fit: contain; animation: photo-wait 1.5s ease-in-out infinite; }
+.image-ready .product-photo-loading { opacity: 0; }
+@keyframes photo-wait { 50% { transform: translateY(-8px) rotate(4deg); } }
+.product-photo-copy {
+  align-self: center; padding: 64px 42px 46px; min-width: 0;
+  opacity: 0; transform: translateY(18px); transition: opacity .6s ease .14s,transform .8s var(--obaia-ease) .14s;
+}
+.is-open .product-photo-copy { opacity: 1; transform: none; }
+.product-photo-category { margin-bottom: 22px; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.product-photo-title { font-size: clamp(27px,3vw,43px); font-weight: 800; line-height: 1.05; letter-spacing: -.045em; margin-bottom: 20px; text-wrap: balance; }
+.product-photo-description { font-size: 14px; line-height: 1.7; font-weight: 400; color: var(--baie-dark); }
+.product-photo-note { margin-top: 30px; font-size: 10px; line-height: 1.6; opacity: .62; }
+.product-photo-close {
+  position: absolute; z-index: 2; top: 16px; right: 16px; width: 42px; height: 42px;
+  display: grid; place-items: center; background: var(--white); color: var(--baie);
+  border: 1px solid rgb(117 27 56 / 25%); border-radius: 50%; cursor: pointer;
+  transition: background .3s ease,color .3s ease,transform .5s var(--obaia-ease);
+}
+.product-photo-close svg { width: 18px; height: 18px; }
+.product-photo-close:hover { background: var(--baie); color: var(--white); transform: rotate(90deg); }
+.product-photo-error { position: absolute; inset: 0; display: none; place-items: center; padding: 30px; font-size: 13px; text-align: center; }
+.image-error .product-photo-error { display: grid; }
+.image-error .product-photo-loading { display: none; }
+@media (max-width:700px) {
+  .product-photo-dialog { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); border-radius: 22px; }
+  .product-photo-card { grid-template-columns: 1fr; min-height: 0; }
+  .product-photo-media { aspect-ratio: 3 / 2; }
+  .product-photo-media > img { min-height: 0; height: 100%; object-fit: cover; }
+  .product-photo-copy { padding: 27px 25px 30px; }
+  .product-photo-category { margin-bottom: 12px; font-size: 9px; }
+  .product-photo-title { margin-bottom: 14px; }
+  .product-photo-note { margin-top: 17px; }
+  .product-photo-cue { gap: 5px; font-size: 8px; }
+  .product-photo-cue svg { width: 28px; height: 28px; }
+  .product-photo-trigger { gap: 10px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .product-photo-dialog,.product-photo-copy,.product-photo-media > img { transition: none; transform: none; }
+  .product-photo-media > img { clip-path: none; }
+  .product-photo-loading img { animation: none; }
+}

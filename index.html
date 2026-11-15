@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es">
+<head>
+
+<meta charset="utf-8"/>
+<script src="./assets/obaia-entry.js?v=18"></script>
+<link rel="preload" as="image" href="./assets/brand/logo-principal-oficial-cream.svg"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OBAIA | Açaí &amp; Juice Bar Premium Donostia</title>
+<!-- FIX SEO: Meta description añadida -->
+<meta content="OBAIA es el açaí &amp; juice bar premium de San Sebastián. Bowls de açaí puro, zumos cold-pressed y smoothies 100% naturales. Saludable y sabroso Junto a la playa de la Zurriola, Donostia." name="description"/>
+<!-- FIX PERFORMANCE: Preconnect para fuentes -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Favicon estándar -->
+<link href="./img/favicon/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- Favicon para navegadores modernos (PNG es más nítido) -->
+<link href="./img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="./img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<!-- Para dispositivos Apple -->
+<link href="./img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- FIX PERFORMANCE: Tailwind CDN eliminado y reemplazado por CSS custom -->
+<!-- Usar Tailwind CDN en producción bloquea el render. Se reemplaza por CSS propio. -->
+<style>
+      /* ===== CSS VARIABLES ===== */
+      :root {
+        --white: #fffbf0;
+        --baie: #751b38;
+        --baie-dark: #3b0e1c;
+        --maracuja: #f4b606;
+        --pepin: #3a3705;
+        --font: "Montserrat", sans-serif;
+      }
+
+      /* ===== RESET & BASE ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font);
+        background-color: var(--white);
+        color: var(--baie);
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      /* ===== TYPOGRAPHY ===== */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .subtitle {
+        font-weight: 700;
+      }
+      .body-text {
+        font-weight: 400;
+      }
+      .translation-text {
+        font-weight: 500;
+        font-style: italic;
+      }
+
+      /* ===== LAYOUT UTILITIES ===== */
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .container-md {
+        max-width: 896px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .container-lg {
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .flex {
+        display: flex;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .gap-4 {
+        gap: 1rem;
+      }
+      .gap-6 {
+        gap: 1.5rem;
+      }
+      .gap-8 {
+        gap: 2rem;
+      }
+      .gap-12 {
+        gap: 3rem;
+      }
+      .gap-20 {
+        gap: 5rem;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .relative {
+        position: relative;
+      }
+      .absolute {
+        position: absolute;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
+
+      /* ===== COLORS ===== */
+      .text-baie {
+        color: var(--baie);
+      }
+      .text-baie-dark {
+        color: var(--baie-dark);
+      }
+      .text-white {
+        color: var(--white);
+      }
+      .text-maracuja {
+        color: var(--maracuja);
+      }
+      .text-pepin {
+        color: var(--pepin);
+      }
+      .bg-white {
+        background-color: var(--white);
+      }
+      .bg-baie {
+        background-color: var(--baie);
+      }
+      .bg-light {
+        background-color: #fffbf0;
+      }
+
+      /* ===== CAPSULE BADGE ===== */
+      .capsule {
+        display: inline-block;
+        border: 1px solid currentColor;
+        border-radius: 9999px;
+        padding: 0.25rem 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+      }
+      .capsule-solid {
+        background-color: var(--baie);
+        color: var(--white);
+        border-color: transparent;
+      }
+      .capsule-white {
+        background-color: var(--white);
+        color: var(--baie);
+        border-color: transparent;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ===== NAVBAR ===== */
+      /* ===== NAVBAR (FLUIDA Y ELÁSTICA) ===== */
+      #navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 50;
+        padding: clamp(
+          0.5rem,
+          2vw,
+          1.5rem
+        ); /* El padding se reduce solo en pantallas pequeñas */
+        transition: padding 0.5s ease;
+      }
+
+      #nav-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        border-radius: 9999px;
+        padding: 0.75rem clamp(1rem, 3vw, 2rem);
+        gap: 1rem; /* Espacio mínimo garantizado entre elementos */
+        transition: all 0.5s ease;
+      }
+
+      #nav-inner.scrolled {
+        background-color: rgba(255, 251, 240, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 8px rgba(117, 24, 56, 0.08);
+        border: 1px solid rgba(117, 24, 56, 0.1);
+      }
+
+      .nav-links {
+        display: none; /* Se oculta en móvil vertical por defecto */
+        align-items: center;
+        /* El secreto: el espacio entre links se adapta al ancho de la pantalla */
+        gap: clamp(0.5rem, 2vw, 2.5rem);
+        flex: 1; /* Permite que la caja crezca */
+        justify-content: center; /* Centra los links en el espacio sobrante */
+      }
+
+      .nav-link {
+        color: var(--baie);
+        font-weight: 700;
+        /* La fuente se encoge si la pantalla es estrecha (entre 0.7rem y 0.875rem) */
+        font-size: clamp(0.7rem, 1.1vw, 0.875rem);
+        letter-spacing: 0.05em;
+        white-space: nowrap; /* Evita que el texto salte de línea */
+        transition: color 0.3s;
+      }
+
+      .nav-logo {
+        flex-shrink: 0; /* Impide que el logo se aplaste */
+        width: clamp(100px, 12vw, 140px); /* El logo también escala */
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-cta {
+        flex-shrink: 0;
+        /* El botón también ajusta su tamaño y padding */
+        padding: 0.6rem clamp(1rem, 2vw, 2rem);
+        font-size: clamp(0.7rem, 1vw, 0.875rem);
+        background-color: var(--baie);
+        color: var(--white);
+        border-radius: 9999px;
+        font-weight: 700;
+        transition: all 0.3s;
+      }
+
+      /* ===== RESPONSIVE SIMPLE PARA MÓVIL ROTADO ===== */
+      @media (min-width: 768px) {
+        .nav-links {
+          display: flex; /* Aparecen los links si hay más de 768px */
+        }
+        #mobile-menu-btn {
+          display: none;
+        }
+      }
+
+      /* Si la pantalla es muy pequeña (móvil vertical), mostramos solo hamburguesa */
+      @media (max-width: 767px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        #mobile-menu-btn {
+          display: flex;
+        }
+      }
+
+      /* FIX ACCESSIBILITY: Botón hamburguesa con aria-label */
+      #mobile-menu-btn {
+        color: var(--baie);
+        display: flex;
+        align-items: center;
+        padding: 0.25rem;
+      }
+      #mobile-menu-btn svg {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      #mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 1rem;
+        right: 1rem;
+        background-color: var(--white);
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        padding: 1.5rem;
+        margin-top: 0.5rem;
+        border: 1px solid rgba(117, 24, 56, 0.05);
+      }
+      #mobile-menu .flex-col {
+        gap: 1rem;
+        text-align: center;
+      }
+      .mobile-link {
+        color: var(--baie);
+        font-weight: 700;
+        font-size: 1.125rem;
+      }
+      .mobile-link-accent {
+        color: var(--maracuja);
+        font-weight: 700;
+        font-size: 1.125rem;
+      }
+
+      /* ===== HERO SECTION ===== */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5rem;
+        overflow: hidden;
+        background-color: var(--white);
+      }
+      /* Ajuste específico para móvil */
+      @media (max-width: 767px) {
+        .hero {
+          min-height: auto; /* Dejamos que el contenido mande en móvil */
+          padding-bottom: 4rem; /* Espacio para que no choque con la siguiente sección */
+        }
+      }
+      .hero-blob-1 {
+        position: absolute;
+        top: 25%;
+        left: 2.5rem;
+        width: 18rem;
+        height: 18rem;
+        background-color: rgba(58, 55, 5, 0.05);
+        border-radius: 50%;
+        filter: blur(3rem);
+        animation: blob 15s infinite alternate ease-in-out;
+      }
+      .hero-blob-2 {
+        position: absolute;
+        bottom: 25%;
+        right: 2.5rem;
+        width: 24rem;
+        height: 24rem;
+        background-color: rgba(244, 182, 6, 0.1);
+        border-radius: 50%;
+        filter: blur(3rem);
+        animation: blob 15s 2s infinite alternate ease-in-out;
+      }
+      .hero-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        position: relative;
+        z-index: 10;
+      }
+      .hero-text {
+        width: 100%;
+        text-align: center;
+        z-index: 20;
+      }
+      .hero-badge {
+        margin-bottom: 1.5rem;
+      }
+      .hero-title {
+        font-size: clamp(5rem, 20vw, 9rem);
+        line-height: 0.85;
+        color: var(--baie);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.05em;
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+      }
+      .hero-tagline {
+        font-style: italic;
+        color: rgba(117, 24, 56, 0.7);
+        font-size: clamp(1.5rem, 4vw, 1.875rem);
+        margin-bottom: 2.5rem;
+        font-weight: 600;
+      }
+      .hero-image-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      .hero-blob-bg {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(59, 14, 28, 0.1);
+        filter: blur(2rem);
+        transform: scale(0.9) translateY(2.5rem);
+        animation: morph 10s ease-in-out infinite;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+      .hero-img-container {
+        position: relative;
+        width: 85vw;
+        height: 85vw;
+        max-width: 35rem;
+        max-height: 35rem;
+        animation: morph 10s ease-in-out infinite;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+      .hero-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-img-container video {
+        width: 100%;
+        height: 100%;
+        /* Esto asegura que el video cubra todo el contenedor sin deformarse */
+        object-fit: cover;
+        display: block;
+      }
+      .hero-img-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(117, 24, 56, 0.05);
+      }
+
+      /* ===== REVEAL ANIMATIONS ===== */
+      .reveal-text {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: smoothUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+      .delay-4 {
+        animation-delay: 0.4s;
+      }
+      .delay-5 {
+        animation-delay: 0.5s;
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+        will-change: opacity, transform;
+      }
+      .fade-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== HISTORIA SECTION ===== */
+      .historia {
+        padding: 6rem 1.5rem;
+        background-color: var(--white);
+        position: relative;
+      }
+      .historia-inner {
+        max-width: 1152px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        align-items: center;
+      }
+      .historia-img-wrap {
+        width: 100%;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(117, 24, 56, 0.1);
+        position: relative;
+      }
+      .historia-img-wrap img {
+        width: 100%;
+        /* FIX PERFORMANCE: height fijo para evitar layout shift, object-fit para recortar */
+        height: 400px;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+      .historia-img-wrap:hover img {
+        transform: scale(1.05);
+      }
+      .historia-badge-location {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        background-color: var(--white);
+        color: var(--baie);
+        border-radius: 9999px;
+        padding: 0.25rem 1rem;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+      .historia-text {
+        width: 100%;
+      }
+      .historia-title {
+        font-size: clamp(2.5rem, 7vw, 3.75rem);
+        color: var(--baie);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+      .historia-divider {
+        width: 4rem;
+        height: 4px;
+        background-color: var(--maracuja);
+        border-radius: 9999px;
+        margin-bottom: 2rem;
+      }
+      .historia-subtitle {
+        font-size: 1.5rem;
+        color: var(--baie-dark);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      .historia-body {
+        font-size: 1.125rem;
+        color: rgba(117, 24, 56, 0.8);
+        line-height: 1.75;
+      }
+      .historia-body p + p {
+        margin-top: 1rem;
+      }
+
+      /* ===== PRODUCTOS SECTION ===== */
+      .productos {
+        padding: 6rem 1.5rem;
+        background-color: #fffbf0;
+        position: relative;
+      }
+      .productos-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+      .productos-title {
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        color: var(--baie);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+      .productos-divider {
+        width: 3rem;
+        height: 2px;
+        background-color: var(--pepin);
+        margin: 0 auto;
+      }
+      .productos-grid {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .producto-card {
+      }
+      .producto-img-wrap {
+        aspect-ratio: 3/4;
+        border-radius: 3rem;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(59, 14, 28, 0.05);
+      }
+      .producto-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1s ease;
+      }
+      .producto-card:hover .producto-img-wrap img {
+        transform: scale(1.05);
+      }
+      .producto-tag {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+      }
+      .producto-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(58, 55, 5, 0.1);
+        transition: background-color 1s ease;
+      }
+      .producto-card:hover .producto-overlay {
+        background-color: transparent;
+      }
+      .producto-info {
+        text-align: center;
+      }
+      .producto-name {
+        font-size: 1.5rem;
+        color: var(--baie);
+        margin-bottom: 0.75rem;
+      }
+      .producto-desc {
+        color: rgba(59, 14, 28, 0.7);
+        padding: 0 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* ===== CARTA SECTION ===== */
+      .carta {
+        padding: 6rem 1.5rem;
+        background-color: var(--white);
+      }
+      .carta-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+      .carta-title {
+        font-size: clamp(2.5rem, 7vw, 3.75rem);
+        color: var(--baie);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+      .carta-subtitle {
+        font-size: 1.25rem;
+        font-style: italic;
+        color: rgba(117, 24, 56, 0.5);
+      }
+      .carta-box {
+        max-width: 896px;
+        margin: 0 auto;
+        background-color: #fdfbf6;
+        border-radius: 3rem;
+        padding: 2rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(117, 24, 56, 0.05);
+      }
+      .carta-section {
+        margin-bottom: 4rem;
+      }
+      .carta-section:last-child {
+        margin-bottom: 0;
+      }
+      .carta-section-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      .carta-icon {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+      .carta-icon-baie {
+        background-color: rgba(244, 182, 6, 0.2);
+      }
+      .carta-icon-pepin {
+        background-color: rgba(58, 55, 5, 0.1);
+      }
+      .carta-section-name {
+        font-size: 1.875rem;
+        color: var(--baie);
+        font-weight: 700;
+      }
+      .carta-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      .carta-item {
+      }
+      .carta-item-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .carta-item-top {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .carta-item-name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--baie);
+      }
+      .carta-item-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--baie-dark);
+      }
+      .carta-item-desc {
+        color: rgba(59, 14, 28, 0.8);
+        line-height: 1.6;
+      }
+      .carta-price-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .carta-dotted {
+        display: none;
+      }
+
+      /* ===== RESEÑAS SECTION ===== */
+      .resenas {
+        padding: 6rem 1.5rem;
+        background-color: var(--white);
+      }
+      .resenas-header {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+      .resenas-tag {
+        margin-bottom: 1.5rem;
+        display: inline-block;
+      }
+      .resenas-title {
+        font-size: clamp(1.875rem, 5vw, 3rem);
+        color: var(--baie);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+      .stars {
+        display: flex;
+        justify-content: center;
+        gap: 0.25rem;
+        color: var(--maracuja);
+        font-size: 1.5rem;
+      }
+      .resenas-grid {
+        max-width: 1152px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .resena {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .resena-text {
+        font-style: italic;
+        font-size: 1.125rem;
+        color: var(--baie-dark);
+        margin-bottom: 2rem;
+        line-height: 1.75;
+      }
+      .resena-avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .avatar-baie {
+        background-color: rgba(117, 24, 56, 0.1);
+        color: var(--baie);
+      }
+      .avatar-maracuja {
+        background-color: rgba(244, 182, 6, 0.2);
+        color: var(--maracuja);
+      }
+      .avatar-pepin {
+        background-color: rgba(58, 55, 5, 0.1);
+        color: var(--pepin);
+      }
+      .resena-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--baie);
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background-color: var(--white);
+        padding: 5rem 1.5rem 2.5rem;
+        border-top: 1px solid rgba(117, 24, 56, 0.1);
+      }
+      .footer-inner {
+        max-width: 1152px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-logo {
+        font-size: clamp(2rem, 6vw, 3rem);
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        color: var(--baie);
+        margin-bottom: 1rem;
+      }
+      .footer-tagline {
+        font-weight: 700;
+        color: var(--maracuja);
+        margin-bottom: 2.5rem;
+      }
+
+      .lang-btns {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 3rem;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: var(--baie);
+      }
+      .lang-sep {
+        opacity: 0.4;
+      }
+      .lang-btn {
+        opacity: 0.5;
+        transition: opacity 0.3s;
+      }
+      .lang-btn:hover {
+        opacity: 0.8;
+      }
+      .lang-btn.active {
+        opacity: 1;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        width: 100%;
+        max-width: 56rem;
+        border-top: 1px solid rgba(117, 24, 56, 0.1);
+        border-bottom: 1px solid rgba(117, 24, 56, 0.1);
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+      }
+      .footer-col-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--baie);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .footer-col-text {
+        color: rgba(59, 14, 28, 0.7);
+        line-height: 1.7;
+        font-size: 0.9rem;
+      }
+
+      .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        font-size: 0.875rem;
+      }
+      .footer-copy {
+        color: rgba(117, 24, 56, 0.5);
+      }
+      .footer-legal {
+        display: flex;
+        gap: 0.75rem;
+        color: rgba(117, 24, 56, 0.7);
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .footer-legal a {
+        text-decoration: underline;
+        text-decoration-color: rgba(117, 24, 56, 0.2);
+        transition: color 0.3s;
+      }
+      .footer-legal a:hover {
+        color: var(--maracuja);
+      }
+      .footer-legal span {
+        opacity: 0.4;
+      }
+      .footer-social {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .footer-social a {
+        font-weight: 700;
+        color: var(--baie);
+        transition: color 0.3s;
+      }
+      .footer-social a:hover {
+        color: var(--maracuja);
+      }
+      .footer-slogan {
+        font-style: italic;
+        font-weight: 500;
+        color: var(--maracuja);
+      }
+
+      /* ===== ANIMATIONS ===== */
+      @keyframes morph {
+        0% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        50% {
+          border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        }
+        100% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+      }
+      @keyframes blob {
+        0% {
+          transform: translate(0px, 0px) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+        100% {
+          transform: translate(0px, 0px) scale(1);
+        }
+      }
+      @keyframes smoothUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ===== RESPONSIVE: TABLET & DESKTOP ===== */
+      @media (min-width: 768px) {
+        /* Navbar */
+        .nav-links {
+          display: flex;
+        }
+        #mobile-menu-btn {
+          display: none;
+        }
+        #mobile-menu {
+          display: none !important;
+        }
+
+        /* Hero */
+        .hero-inner {
+          flex-direction: row;
+        }
+        .hero-text {
+          width: 50%;
+          text-align: left;
+        }
+        .hero-title {
+          justify-content: flex-start;
+        }
+        .hero-image-wrap {
+          width: 50%;
+        }
+
+        /* Historia */
+        .historia-inner {
+          flex-direction: row;
+        }
+        .historia-text {
+          width: 50%;
+        }
+        .historia-img-wrap {
+          width: 50%;
+        }
+        .historia-img-wrap img {
+          height: 600px;
+        }
+
+        /* Productos */
+        .productos-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Carta */
+        .carta-box {
+          padding: 4rem;
+        }
+        .carta-item-header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+        .carta-dotted {
+          display: block;
+          flex: 1;
+          border-bottom: 2px dotted rgba(117, 24, 56, 0.2);
+          margin: 0 1rem;
+          min-width: 2rem;
+          margin-bottom: 4px;
+        }
+
+        /* Reseñas */
+        .resenas-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Footer */
+        .footer-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .footer-bottom {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      /* ===== FIX ACCESSIBILITY: Focus visible ===== */
+      :focus-visible {
+        outline: 3px solid var(--maracuja);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* ===== SEASONAL SECTION ===== */
+      .temporada {
+        padding: 6rem 0;
+        background-color: #fffbf0;
+        overflow: hidden;
+      }
+      .slider-container {
+        max-width: 1280px; /* Misma medida que tu clase .container */
+        margin: 3rem auto 0; /* Centrado automático horizontal */
+        padding: 0 1.5rem;
+        width: 100%;
+      }
+      .season-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 2.5rem;
+        padding: 1rem 0.5rem 3rem;
+        scrollbar-width: none;
+      }
+      .season-slider::-webkit-scrollbar {
+        display: none;
+      }
+      .season-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        background: var(--white);
+        border-radius: 2.5rem;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(59, 14, 28, 0.05);
+      }
+      .season-img-wrap {
+        height: 450px;
+        position: relative;
+      }
+      .season-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .season-price {
+        position: absolute;
+        bottom: 1rem;
+        right: 1.5rem;
+        background: var(--maracuja);
+        color: var(--baie-dark);
+        padding: 0.5rem 1.25rem;
+        border-radius: 999px;
+        font-weight: 800;
+      }
+
+      .season-info {
+        padding: 2rem;
+        text-align: center;
+      }
+      .season-name {
+        font-size: 1.4rem;
+        color: var(--baie);
+        margin-bottom: 0.5rem;
+      }
+      .season-desc {
+        font-size: 0.95rem;
+        opacity: 0.8;
+        line-height: 1.5;
+      }
+
+      @media (min-width: 768px) {
+        .season-card {
+          flex: 0 0 calc(33.33% - 1rem);
+        }
+        .season-slider {
+          justify-content: center;
+          overflow: visible;
+        }
+      }
+
+      .nav-logo {
+        font-size: 1.875rem;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        color: var(--baie);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        /* El tamaño del contenedor */
+        width: 140px;
+        height: 40px;
+      }
+
+      .nav-logo:hover {
+        transform: scale(1.05);
+      }
+
+      .obaia-logo-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        /* Quitamos cualquier fondo que pudiera tener */
+        background: transparent;
+      }
+      .obaia-logo-svg-footer {
+        width: 100%;
+        height: 80%;
+        display: block;
+        /* Quitamos cualquier fondo que pudiera tener */
+        background: transparent;
+      }
+    </style>
+<link href="./assets/obaia-motion.css?v=15" rel="stylesheet"/>
+
+<script defer="" src="./assets/obaia-motion.js?v=18"></script>
+<link href="./assets/obaia-viva.css?v=14" rel="stylesheet"/><script defer="True" src="./assets/obaia-viva.js?v=10"></script><link rel="stylesheet" href="./assets/plaza-bilbao.css?v=3"/>
+</head>
+<body>
+<div class="fruit-intro" aria-hidden="true"><img class="intro-brand" src="./assets/brand/logo-principal-oficial.svg" alt=""/><output>0%</output><div class="fruit-pile"></div></div>
+<div aria-hidden="true" class="obaia-wipe"><img alt="" src="./assets/brand/logo-principal-oficial-cream.svg"/></div>
+<!-- FIX ACCESSIBILITY: landmark <main> añadido -->
+<!-- FIX ACCESSIBILITY: aria-label en botón hamburguesa -->
+<nav aria-label="Navegación principal" id="navbar">
+<div id="nav-inner">
+<div aria-label="Ir al inicio" class="nav-logo" onclick="window.scrollTo(0, 0)" role="button" tabindex="0">
+<svg aria-hidden="true" class="obaia-logo-svg" viewbox="0 0 346.4 85.4" xmlns="http://www.w3.org/2000/svg">
+<path d="M45.3 4.1C22.7 4.1 5 21.5 5 43.7 5 66 22.7 83.4 45.3 83.4S85.5 66 85.5 43.7c0-22.2-17.7-39.6-40.2-39.6m18 58.2c-4.5 4.5-10.9 6.9-18 6.9C30.4 69.2 20 58.7 20 43.8s10.4-25.4 25.2-25.4c7.1 0 13.5 2.4 18 6.9 4.7 4.6 7.1 11 7.1 18.5.1 7.5-2.4 13.9-7 18.5M140.7 36.2c2.3-2.1 6.6-6.3 6.6-14.4 0-11.1-8.1-16.5-24.6-16.5H92.6v1.2s.3 12.8.5 27c0 1.8-.1 27.1-.2 27.9-.3 11.1-.7 19.8-.7 19.8l-.1 1.2h35.6c19.4 0 28-13.1 28-26 .2-8.7-5.1-15.7-15-20.2m-31.2-17.6h12.6c3.3 0 6.7.3 8.7 2.4.8.8 1.3 1.9 1.6 3.2.5 2.5-.2 5.3-1.9 7.2-1.1 1.2-2.6 2.2-4.6 3.1-1.4.6-2.9 1.1-4.3 1.5-3.4 1-7.7 2.5-13.2 6.1v-.2c0-7.8-.1-22.6-.1-23.4zm14.1 50.6h-15.3V58.7c0-2.5 9.5-11.5 19.5-11.6h.5c8.8 0 12.6 3.2 12.6 10.6 0 8-5.2 11.5-17.3 11.5M256.4 38.4c0-.5.2-11.3.4-20 .1-6.7.3-12.6.3-13.2V4h-14.5v1.2c0 .6.2 6.4.3 13 .2 8.8.5 19.7.5 20.2 0 14.7-.5 30.7-.7 38.3-.1 2.4-.1 4-.1 4.5v1.2h14.6v-1.2c0-.5 0-2.1-.1-4.6-.2-7.6-.7-23.6-.7-38.2M234.7 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1h31.8c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6H184c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.2 12.2 10.8 25.7 11.4 28.3M343.2 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1H320c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6h-23.3c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.1 12.2 10.7 25.7 11.4 28.3" fill="currentColor"></path>
+</svg>
+</div>
+<div class="nav-links" role="navigation">
+<a class="nav-link" data-i18n="nav_temporada" href="#temporada">TEMPORADA</a>
+<a class="nav-link" data-i18n="nav_productos" href="#productos">PRODUCTOS</a>
+<a class="nav-link" data-i18n="nav_historia" href="#historia">HISTORIA</a>
+<a class="nav-link" data-i18n="nav_resenas" href="#resenas">RESEÑAS</a>
+</div>
+<a class="nav-cta" data-i18n="nav_carta" href="#cartas" id="nav-cta-desktop" style="display: none">CARTA</a>
+<!-- FIX ACCESSIBILITY: aria-label añadido al botón -->
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación" id="mobile-menu-btn">
+<svg aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div aria-label="Menú móvil" class="hidden" id="mobile-menu" role="dialog">
+<div class="flex flex-col">
+<a class="mobile-link" data-i18n="nav_temporada" href="#temporada">TEMPORADA</a>
+<a class="mobile-link" data-i18n="nav_productos" href="#productos">PRODUCTOS</a>
+<a class="mobile-link" data-i18n="nav_historia" href="#historia">HISTORIA</a>
+<a class="mobile-link" data-i18n="nav_resenas" href="#resenas">RESEÑAS</a>
+<a class="mobile-link-accent" data-i18n="nav_carta" href="#cartas">CARTA</a>
+</div>
+</div>
+</nav>
+<main>
+<!-- AÇAÍ BOWL: título gigante + bowl que sube y gira al hacer scroll -->
+<section aria-labelledby="ab-titulo" class="ab" id="acai-bowl">
+<div class="ab-stage">
+<h1 aria-label="Açaí Bowl clásico" class="ab-title" id="ab-titulo">
+<span class="ab-line" data-ab-split="">AÇAÍ</span>
+<span class="ab-line"><span data-ab-split="">BOWL</span><span class="ab-mini" data-ab-mini="">clásico</span></span>
+</h1>
+<div class="ab-bowl" data-ab-bowl="" data-motion-bottom="0.3203">
+<img alt="Bowl de açaí OBAIA con fruta fresca y coco; logo y frutita impresos sobre el envase" fetchpriority="high" height="1024" src="./assets/obaia-acai.png" width="1536"/>
+</div>
+</div>
+</section>
+<div class="location-ribbon"><div class="ribbon-track"><span class="ribbon-sequence"><b>Donostia</b><i aria-hidden="true">✦</i><span>Fermín Calbetón, 41</span><i aria-hidden="true">✦</i><span>Plaza Bilbao, 2</span><i aria-hidden="true">✦</i></span><span aria-hidden="true" class="ribbon-sequence"><b>Donostia</b><i aria-hidden="true">✦</i><span>Fermín Calbetón, 41</span><i aria-hidden="true">✦</i><span>Plaza Bilbao, 2</span><i aria-hidden="true">✦</i></span><span aria-hidden="true" class="ribbon-sequence"><b>Donostia</b><i aria-hidden="true">✦</i><span>Fermín Calbetón, 41</span><i aria-hidden="true">✦</i><span>Plaza Bilbao, 2</span><i aria-hidden="true">✦</i></span><span aria-hidden="true" class="ribbon-sequence"><b>Donostia</b><i aria-hidden="true">✦</i><span>Fermín Calbetón, 41</span><i aria-hidden="true">✦</i><span>Plaza Bilbao, 2</span><i aria-hidden="true">✦</i></span><span aria-hidden="true" class="ribbon-sequence"><b>Donostia</b><i aria-hidden="true">✦</i><span>Fermín Calbetón, 41</span><i aria-hidden="true">✦</i><span>Plaza Bilbao, 2</span><i aria-hidden="true">✦</i></span><span aria-hidden="true" class="ribbon-sequence"><b>Donostia</b><i aria-hidden="true">✦</i><span>Fermín Calbetón, 41</span><i aria-hidden="true">✦</i><span>Plaza Bilbao, 2</span><i aria-hidden="true">✦</i></span></div></div>
+<section id="cartas" class="menu-selector container" aria-labelledby="choose-title"><h2 id="choose-title" data-i18n="choose_menu">Nuestras cartas</h2><div class="menu-choices"><a class="menu-choice" href="carta.html"><img src="./img/obaia_bowl_menu.webp" loading="lazy" width="720" height="480" alt=""/><div class="choice-caption"><div><small>Açaí &amp; Juice Bar</small><h3>OBAIA Açaís</h3></div><span aria-hidden="true">↗</span></div></a><a class="menu-choice" href="brunch.html"><img src="./img/brunch-plaza-bilbao.webp" loading="lazy" width="720" height="480" alt=""/><div class="choice-caption"><div><small>Plaza Bilbao, 2</small><h3>OBAIA Brunch</h3></div><span aria-hidden="true">↗</span></div></a></div></section>
+<section class="temporada" id="temporada">
+<div class="container text-center fade-up">
+<span class="capsule" data-i18n="season_tag" style="color: var(--baie); margin-bottom: 1rem">Edición Limitada</span>
+<h2 data-i18n="season_title" style="font-size: clamp(2rem, 5vw, 3rem); color: var(--baie)">
+            DESTACADOS DE TEMPORADA
+          </h2>
+<p class="body-text" data-i18n="season_subtitle" style="max-width: 600px; margin: 1rem auto">
+            Propuestas exclusivas diseñadas con ingredientes locales de este
+            mes.
+          </p>
+</div>
+<div class="slider-container">
+<div class="season-slider fade-up">
+<article class="season-card">
+<div class="season-img-wrap">
+<img alt="Fresas con Chocolate" src="./img/fresas_chocholate.webp"/>
+<!-- <span class="season-price">6.00€</span> -->
+</div>
+<div class="season-info">
+<h3 class="season-name" data-i18n="season_item1_name">
+                  Fresas con Chocolate
+                </h3>
+<p class="season-desc" data-i18n="season_item1_desc">
+                  Fresas de la huerta bañadas al momento con chocolate negro
+                  fundido 70%.
+                </p>
+</div>
+</article>
+<article class="season-card">
+<div class="season-img-wrap">
+<img alt="Overnight Chia Bowl" src="./img/overnight_chia.webp"/>
+<!-- <span class="season-price">5.50€</span> -->
+</div>
+<div class="season-info">
+<h3 class="season-name" data-i18n="season_item2_name">
+                  Overnight Chia
+                </h3>
+<p class="season-desc" data-i18n="season_item2_desc">
+                  Pudding de chía reposado en leche de coco artesanal con frutos
+                  rojos y miel.
+                </p>
+</div>
+</article>
+<article class="season-card">
+<div class="season-img-wrap">
+<img alt="Zumo de Jengibre Shot" src="./img/shoot_gengibre.webp"/>
+<!-- <span class="season-price">3.50€</span> -->
+</div>
+<div class="season-info">
+<h3 class="season-name" data-i18n="season_item3_name">
+                  Ginger Shot
+                </h3>
+<p class="season-desc" data-i18n="season_item3_desc">
+                  Pura energía: extracto de jengibre fresco prensado en frío con
+                  limón y manzana.
+                </p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- PRODUCTOS -->
+<section aria-labelledby="productos-heading" class="productos" id="productos">
+<div class="productos-header fade-up">
+<h2 class="productos-title" data-i18n="prod_title" id="productos-heading">
+            NUESTRA ESENCIA
+          </h2>
+<div class="productos-divider"></div>
+</div>
+<div class="productos-grid">
+<a class="producto-card fade-up" href="carta.html#bowls" style="display: block">
+<article>
+<div class="producto-img-wrap">
+<img alt="Açaí Bowls" height="824" loading="lazy" src="./img/obaia_fresas.webp" width="618"/>
+<div class="producto-tag">
+<span class="capsule capsule-white" data-i18n="prod_tag1">Casero</span>
+</div>
+</div>
+<div class="producto-info">
+<h3 class="producto-name">AÇAÍ BOWLS</h3>
+<p class="body-text producto-desc" data-i18n="prod_desc1">
+                  Puro açaí premium. Textura densa y cremosa, sin hielo.
+                </p>
+</div>
+</article>
+</a>
+<a class="producto-card fade-up" href="carta.html#zumos" style="display: block; transition-delay: 100ms">
+<article>
+<div class="producto-img-wrap">
+<div class="producto-overlay"></div>
+<img alt="Zumos cold-pressed" height="824" loading="lazy" src="./img/obaia_zumo.webp" width="618"/>
+</div>
+<div class="producto-info">
+<h3 class="producto-name">COLD-PRESSED</h3>
+<p class="body-text producto-desc" data-i18n="prod_desc2">
+                  Extracción en frío para conservar todas las vitaminas.
+                </p>
+</div>
+</article>
+</a>
+<a class="producto-card fade-up" href="carta.html#smoothies" style="display: block; transition-delay: 200ms">
+<article>
+<div class="producto-img-wrap">
+<img alt="Smoothies" height="824" loading="lazy" src="./img/obaia_batidos.webp" width="618"/>
+</div>
+<div class="producto-info">
+<h3 class="producto-name">SMOOTHIES</h3>
+<p class="body-text producto-desc" data-i18n="prod_desc3">
+                  Batidos funcionales y 100% naturales. Energía perfecta.
+                </p>
+</div>
+</article>
+</a>
+</div>
+</section>
+<!-- CARTA -->
+<section class="carta text-center" id="carta">
+<div class="container fade-up">
+<h2 class="carta-title" data-i18n="nav_carta">EL MENÚ</h2>
+<p class="body-text" data-i18n="prod_desc4" style="margin: 1.5rem 0 3rem">
+            Descubre nuestra selección premium de Açaí, Smoothies y Zumos
+            Cold-Pressed.
+          </p>
+<a class="nav-cta" data-i18n="title_menu" href="#cartas" style="display: inline-block; padding: 1rem 3rem">VER CARTA COMPLETA</a>
+</div>
+</section>
+<!-- HISTORIA -->
+
+<section aria-labelledby="historia-heading" class="historia" id="historia">
+<div class="historia-inner">
+<div class="historia-img-wrap fade-up">
+<!-- FIX PERFORMANCE: width/height explícitos, loading="lazy" para imágenes fuera del viewport -->
+<img alt="Estilo de vida OBAIA - batidos y bowls saludables" height="400" loading="lazy" src="./img/obaia_descripcion.webp" width="678"/>
+<div class="historia-badge-location">San Sebastián</div>
+</div>
+<div class="historia-text fade-up" style="transition-delay: 200ms">
+<h2 class="historia-title" data-i18n-html="hist_title" id="historia-heading">
+              MÁS QUE<br/>UN BOWL.
+            </h2>
+<div class="historia-divider"></div>
+<p class="historia-subtitle" data-i18n="hist_subtitle">
+              Cremosidad premium, ingredientes frescos y buena energía.
+            </p>
+<div class="historia-body">
+<p data-i18n="hist_p1">
+                En OBAIA, el bienestar es sinónimo de placer. Frutas, verduras
+                de origen, extracción en frío... nada de añadidos innecesarios.
+                Aquí el sabor es puro y la textura no lleva hielo.
+              </p>
+<p data-i18n="hist_p2">
+                Es un oasis *chill* en el centro de Donostia. Puedes
+                personalizar cada bowl con toppings que te aporten lo que
+                necesitas hoy: energía o simplemente un momento de felicidad.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- RESEÑAS -->
+<section aria-labelledby="resenas-heading" class="resenas" id="resenas">
+<div class="resenas-header fade-up">
+<span class="capsule resenas-tag" data-i18n="rev_tag" style="border-color: var(--baie)">Comunidad</span>
+<h2 class="resenas-title" data-i18n="rev_title" id="resenas-heading">
+            FAMILIA OBAIA
+          </h2>
+<div aria-label="5 estrellas" class="stars">★★★★★</div>
+</div>
+<div class="resenas-grid fade-up">
+<article class="resena">
+<blockquote>
+<p class="body-text resena-text" data-i18n="rev_2">
+                "Parada obligatoria tras surfear en la Zurriola. Los zumos son
+                top y la atención de 10. Se nota la calidad premium."
+              </p>
+</blockquote>
+<div aria-hidden="true" class="resena-avatar avatar-maracuja">
+              M
+            </div>
+<cite class="resena-name" style="font-style: normal">Juan Ignacio García.</cite>
+</article>
+<article class="resena">
+<blockquote>
+<p class="body-text resena-text" data-i18n="rev_1">
+                "El mejor açaí que he probado en Donostia. La textura es
+                cremosa, cero hielo, y el sabor es puro. Local con vibra
+                brutal."
+              </p>
+</blockquote>
+<div aria-hidden="true" class="resena-avatar avatar-baie">L</div>
+<cite class="resena-name" style="font-style: normal">Roberts.</cite>
+</article>
+<article class="resena">
+<blockquote>
+<p class="body-text resena-text" data-i18n="rev_3">
+                "A los niños les encantaron los smoothies. Sin culpa y puro
+                sabor, el lema no miente. Repetiremos sin duda."
+              </p>
+</blockquote>
+<div aria-hidden="true" class="resena-avatar avatar-pepin">S</div>
+<cite class="resena-name" style="font-style: normal">Jon Lopez Aguado.</cite>
+</article>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="footer-logo">
+<svg aria-hidden="true" class="obaia-logo-svg-footer" viewbox="0 0 346.4 85.4" xmlns="http://www.w3.org/2000/svg">
+<path d="M45.3 4.1C22.7 4.1 5 21.5 5 43.7 5 66 22.7 83.4 45.3 83.4S85.5 66 85.5 43.7c0-22.2-17.7-39.6-40.2-39.6m18 58.2c-4.5 4.5-10.9 6.9-18 6.9C30.4 69.2 20 58.7 20 43.8s10.4-25.4 25.2-25.4c7.1 0 13.5 2.4 18 6.9 4.7 4.6 7.1 11 7.1 18.5.1 7.5-2.4 13.9-7 18.5M140.7 36.2c2.3-2.1 6.6-6.3 6.6-14.4 0-11.1-8.1-16.5-24.6-16.5H92.6v1.2s.3 12.8.5 27c0 1.8-.1 27.1-.2 27.9-.3 11.1-.7 19.8-.7 19.8l-.1 1.2h35.6c19.4 0 28-13.1 28-26 .2-8.7-5.1-15.7-15-20.2m-31.2-17.6h12.6c3.3 0 6.7.3 8.7 2.4.8.8 1.3 1.9 1.6 3.2.5 2.5-.2 5.3-1.9 7.2-1.1 1.2-2.6 2.2-4.6 3.1-1.4.6-2.9 1.1-4.3 1.5-3.4 1-7.7 2.5-13.2 6.1v-.2c0-7.8-.1-22.6-.1-23.4zm14.1 50.6h-15.3V58.7c0-2.5 9.5-11.5 19.5-11.6h.5c8.8 0 12.6 3.2 12.6 10.6 0 8-5.2 11.5-17.3 11.5M256.4 38.4c0-.5.2-11.3.4-20 .1-6.7.3-12.6.3-13.2V4h-14.5v1.2c0 .6.2 6.4.3 13 .2 8.8.5 19.7.5 20.2 0 14.7-.5 30.7-.7 38.3-.1 2.4-.1 4-.1 4.5v1.2h14.6v-1.2c0-.5 0-2.1-.1-4.6-.2-7.6-.7-23.6-.7-38.2M234.7 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1h31.8c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6H184c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.2 12.2 10.8 25.7 11.4 28.3M343.2 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1H320c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6h-23.3c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.1 12.2 10.7 25.7 11.4 28.3" fill="currentColor"></path>
+</svg>
+</div>
+<p class="footer-tagline subtitle">Açaí &amp; juice bar</p>
+<div aria-label="Seleccionar idioma" class="lang-btns" role="group">
+<button aria-label="Español" class="lang-btn" id="btn-es" onclick="changeLanguage('es')">
+            ES
+          </button>
+<span aria-hidden="true" class="lang-sep">|</span>
+<button aria-label="English" class="lang-btn" id="btn-en" onclick="changeLanguage('en')">
+            EN
+          </button>
+<span aria-hidden="true" class="lang-sep">|</span>
+<button aria-label="Euskera" class="lang-btn" id="btn-eu" onclick="changeLanguage('eu')">
+            EU
+          </button>
+</div>
+<div class="footer-grid">
+<div>
+<h3 class="footer-col-title" data-i18n="footer_loc">Ubicación</h3>
+<p class="footer-col-text body-text">
+              San Sebastián, Donostia<br/>Fermin Calbeton Kalea, 41<br/><a href="brunch.html">Plaza Bilbao, 2</a>
+            </p>
+</div>
+<div>
+<h3 class="footer-col-title" data-i18n="footer_hours">Horario</h3>
+<p class="footer-col-text body-text">
+              Fermin Calbeton Kalea, 41<br/>Todos los días: 09:00 - 20:00<br/>Martes: Cerrado
+            </p>
+</div>
+<div>
+<h3 class="footer-col-title" data-i18n="footer_contact">
+              Contacto
+            </h3>
+<p class="footer-col-text body-text">
+              contact@obaia.es<br/>+34 647 838 616
+            </p>
+</div>
+</div>
+<div class="footer-bottom">
+<div>
+<p class="footer-copy body-text">
+              © 2026 OBAIA. Todos los derechos reservados.
+            </p>
+<div class="footer-legal">
+<a data-i18n="legal_privacy" href="./politicas/Politica_Privacidad_OBAIA.pdf" rel="noopener" target="_blank">Privacidad</a>
+<span aria-hidden="true">·</span>
+<a data-i18n="legal_cookies" href="./politicas/Politica_Cookies_OBAIA.pdf" rel="noopener" target="_blank">Cookies</a>
+<span aria-hidden="true">·</span>
+<a data-i18n="legal_notice" href="./politicas/Aviso_Legal_OBAIA.pdf" rel="noopener" target="_blank">Aviso Legal</a>
+</div>
+</div>
+<div class="footer-social">
+<a aria-label="Instagram de OBAIA" href="https://www.instagram.com/obaia.donostia/" rel="noopener" target="_blank">INSTAGRAM</a>
+<a aria-label="Uber Eats de OBAIA" href="https://www.ubereats.com/es/store/obaia/bLzaS3DYXaCUKjV51osHug" rel="noopener" target="_blank">UBER EATS</a>
+</div>
+<p class="footer-slogan translation-text" data-i18n="hero_tagline">
+            Açaí &amp; Juicy Bar
+          </p>
+</div>
+</div>
+</footer>
+<script>
+      // === TRADUCCIONES ===
+      const translations = {
+        es: {
+          choose_menu: "Nuestras cartas",
+
+          pb_title: "Brunch en Plaza Bilbao",
+          pb_intro: "Açaí, brunch, café y menú del día en el centro de Donostia.",
+          pb_link: "Descubrir Plaza Bilbao",
+          pb_pending: "La carta ampliada estará disponible aquí.",
+          pb_map: "Cómo llegar",
+
+          nav_historia: "HISTORIA",
+          nav_productos: "PRODUCTOS",
+          nav_carta: "CARTA",
+          nav_resenas: "RESEÑAS",
+          hero_badge: "100% Natural",
+          title_menu: "VER LAS DOS CARTAS",
+          hero_tagline: "Açaí & Juicy Bar",
+          hist_title: "MÁS QUE<br />UN BOWL.",
+          hist_subtitle:
+            "Cremosidad premium, ingredientes frescos y buena energía.",
+          hist_p1:
+            "En OBAIA, el bienestar es sinónimo de placer. Frutas, verduras de origen, extracción en frío... nada de añadidos innecesarios. Aquí el sabor es puro y la textura no lleva hielo.",
+          hist_p2:
+            "Es un oasis *chill* en el centro de Donostia. Puedes personalizar cada bowl con toppings que te aporten lo que necesitas hoy: energía o simplemente un momento de felicidad.",
+          prod_title: "NUESTRA ESENCIA",
+          prod_tag1: "Casero",
+          prod_desc1:
+            "Puro açaí premium. Textura densa y cremosa, sin hielo, lista para ser coronada con tus toppings favoritos.",
+          prod_desc2:
+            "Extracción en frío para conservar intactas todas las vitaminas y nutrientes de la fruta y la verdura.",
+          prod_desc3:
+            "Batidos funcionales y 100% naturales. El impulso de energía perfecta para tu rutina diaria.",
+          prod_desc4:
+            "Descubre nuestra selección premium de Açaí, Smoothies y Zumos Cold-Pressed.",
+          menu_subtitle: "Healthy & Delicious",
+          menu_classic_desc:
+            "Base de açaí puro, plátano, granola artesanal, fresas y coco rallado.",
+          menu_badge_top: "Top Ventas",
+          menu_protein_desc:
+            "Base de açaí, proteína vegetal, crema de cacahuete y chía.",
+          menu_detox_desc: "Manzana verde, apio, espinaca, pepino y limón.",
+          rev_tag: "Comunidad",
+          rev_title: "FAMILIA OBAIA",
+          rev_1:
+            '"Nos atendió Vini, muy simpático y explicando todo perfectamente. ¡El bowl de açaí, increíble!"',
+          rev_2:
+            '"¡Una pasada este lugar! La atención es estupenda y cualquiera de sus combinaciones con açaí es realmente increíble. Frutas frescas y las porciones están muy bien. ¡Iré cada vez que pueda!"',
+          rev_3:
+            '"Se podría decir que está en el top de productos de San Sebastián. Calidad en las piezas de fruta y los sabores conseguidos. Un excelente trabajo con el local y la atención."',
+          footer_loc: "Ubicación",
+          footer_hours: "Horario",
+          footer_contact: "Contacto",
+          legal_privacy: "Privacidad",
+          legal_cookies: "Cookies",
+          legal_notice: "Aviso Legal",
+          // Dentro de translations -> es: { ... }
+          season_tag: "Edición Limitada",
+          season_title: "DESTACADOS DE TEMPORADA",
+          nav_temporada: "TEMPORADA",
+          season_subtitle:
+            "Propuestas exclusivas diseñadas con ingredientes locales de esta temporada.",
+          season_item1_name: "Fresas con Chocolate",
+          season_item1_desc:
+            "Fresas de la huerta bañadas al momento con chocolate negro fundido 70%.",
+          season_item2_name: "Overnight Chia",
+          season_item2_desc:
+            "Pudding de chía reposado en leche de coco artesanal con frutos rojos y miel.",
+          season_item3_name: "Shot de Gengibre",
+          season_item3_desc:
+            "Pura energía: extracto de jengibre fresco prensado en frío con limón y manzana.",
+        },
+        en: {
+          choose_menu: "Our menus",
+
+          pb_title: "Brunch at Plaza Bilbao",
+          pb_intro: "Açaí, brunch, coffee and a daily menu in central San Sebastián.",
+          pb_link: "Explore Plaza Bilbao",
+          pb_pending: "The full menu will be available here.",
+          pb_map: "Get directions",
+
+          nav_historia: "HISTORY",
+          nav_productos: "PRODUCTS",
+          nav_carta: "MENU",
+          nav_resenas: "REVIEWS",
+          hero_badge: "100% Natural",
+          title_menu: "SEE FULL MENU",
+          hero_tagline: "Açaí & Juicy Bar",
+          hist_title: "MORE THAN<br />A BOWL.",
+          hist_subtitle:
+            "Premium creaminess, fresh ingredients, and good vibes.",
+          hist_p1:
+            "At OBAIA, wellness means pleasure. Sourced fruits, vegetables, cold-pressed... no unnecessary additives. Here the flavor is pure and the texture is ice-free.",
+          hist_p2:
+            "It's a *chill* oasis in the center of Donostia. You can customize each bowl with toppings that give you what you need today: energy or simply a moment of happiness.",
+          prod_title: "OUR ESSENCE",
+          prod_tag1: "Homemade",
+          prod_desc1:
+            "Pure premium açaí. Dense and creamy texture, no ice, ready to be topped with your favorites.",
+          prod_desc2:
+            "Cold-pressed to preserve all the vitamins and nutrients of fruits and vegetables intact.",
+          prod_desc3:
+            "Functional and 100% natural smoothies. The perfect energy boost for your daily routine.",
+          prod_desc4:
+            "Discover our premium selection of Açaí, Smoothies and Cold-Pressed Juices.",
+          menu_subtitle: "Healthy & Delicious",
+          menu_classic_desc:
+            "Pure açaí base, banana, artisan granola, strawberries and shredded coconut.",
+          menu_badge_top: "Top Seller",
+          menu_protein_desc:
+            "Açaí base, plant protein, peanut butter and chia.",
+          menu_detox_desc: "Green apple, celery, spinach, cucumber and lemon.",
+          rev_tag: "Community",
+          rev_title: "OBAIA FAMILY",
+          rev_1:
+            '"Vini served us; he was very friendly and explained everything perfectly. The açaí bowl was incredible!"',
+          rev_2:
+            '"This place is amazing! The service is fantastic and any of their açaí combinations are truly incredible. Fresh fruit and generous portions. I will be back whenever I can!"',
+          rev_3:
+            '"You could say it is one of the best products in San Sebastián. The quality of the fruit and the flavors are excellent. The shop itself and the service are superb."',
+          footer_loc: "Location",
+          footer_hours: "Opening Hours",
+          footer_contact: "Contact",
+          legal_privacy: "Privacy",
+          legal_cookies: "Cookies",
+          legal_notice: "Legal Notice",
+          season_tag: "Limited Edition",
+          nav_temporada: "SEASONAL",
+          season_title: "SEASONAL HIGHLIGHTS",
+          season_subtitle:
+            "Exclusive proposals designed with this month's local ingredients.",
+          season_item1_name: "Chocolate Strawberries",
+          season_item1_desc:
+            "Farm strawberries dipped in 70% dark melted chocolate.",
+          season_item2_name: "Overnight Chia",
+          season_item2_desc:
+            "Chia pudding soaked in artisanal coconut milk with berries and honey.",
+          season_item3_name: "Ginger Shot",
+          season_item3_desc:
+            "Pure energy: fresh cold-pressed ginger extract with lemon and apple.",
+        },
+        eu: {
+          choose_menu: "Gure kartak",
+
+          pb_title: "Bruncha Bilbo plazan",
+          pb_intro: "Açaía, bruncha, kafea eta eguneko menua Donostiako erdigunean.",
+          pb_link: "Ezagutu Bilbo plazako lokala",
+          pb_pending: "Karta zabaldua hemen egongo da eskuragarri.",
+          pb_map: "Nola iritsi",
+
+          nav_historia: "HISTORIA",
+          nav_productos: "PRODUKTUAK",
+          nav_carta: "KARTA",
+          nav_resenas: "IRITZIAK",
+          hero_badge: "%100 Naturala",
+          title_menu: "IKUSI BI KARTAK",
+          hero_tagline: "Açaí & Juicy Bar",
+          hist_title: "BOWL BAT<br />BAINO GEHIAGO.",
+          hist_subtitle: "Premium kremasuna, osagai freskoak eta energia ona.",
+          hist_p1:
+            "OBAIA-n, ongizatea plazeraren sinonimoa da. Jatorrizko fruituak, barazkiak, hotzean erauzia... alferrikako eranskinik gabe. Hemen zaporea hutsa da eta testurak ez du izotzik.",
+          hist_p2:
+            "Oasi *chill* bat da Donostiako erdigunean. Bowl bakoitza gaur behar duzun osagaiekin pertsonaliza dezakezu: energia edo zoriontasun une bat besterik ez.",
+          prod_title: "GURE MUINA",
+          prod_tag1: "Etxekoa",
+          prod_desc1:
+            "Açaí premium hutsa. Testura sendo eta krematsua, izotzik gabe, zure gogoko toppingekin osatzeko prest.",
+          prod_desc2:
+            "Hotzean erauzia, fruitu eta barazkien bitamina eta mantenugai guztiak osorik mantentzeko.",
+          prod_desc3:
+            "Smoothie funtzionalak eta %100 naturalak. Bultzada ezin hobea zure egunerokorako.",
+          prod_desc4:
+            "Ezagutu gure Açaí, Smoothie eta zuku hotzean prentsatuen aukeraketa bikaina.",
+          menu_subtitle: "Osasuntsua eta Goxoa",
+          menu_classic_desc:
+            "Açaí base hutsa, platanoa, eskuz egindako granola, marrubiak eta koko birrindua.",
+          menu_badge_top: "Salduena",
+          menu_protein_desc:
+            "Açaí basea, proteina begetala, kakahuete krema eta chia.",
+          menu_detox_desc: "Sagar berdea, apioa, espinaka, pepinoa eta limoia.",
+          rev_tag: "Komunitatea",
+          rev_title: "OBAIA FAMILIA",
+          rev_1:
+            '"Vinik zerbitzatu zigun; oso jatorra izan zen eta dena primeran azaldu zigun. Açaí ontzia izugarria zen!"',
+          rev_2:
+            '"Leku hau harrigarria da! Zerbitzua bikaina da eta haien açaí konbinazio guztiak benetan sinestezinak dira. Fruta freskoa eta anoa eskuzabalak. Ahal dudanean itzuliko naiz!"',
+          rev_3:
+            '"Esan liteke Donostiako produkturik onenetakoa dela. Fruituaren kalitatea eta zaporeak bikainak dira. Denda bera eta zerbitzua bikainak dira."',
+          footer_loc: "Kokalekua",
+          footer_hours: "Ordutegia",
+          footer_contact: "Kontaktua",
+          legal_privacy: "Pribatutasuna",
+          legal_cookies: "Cookie-ak",
+          legal_notice: "Lege Oharra",
+          season_tag: "Edizio Mugatua",
+          nav_temporada: "GARAIKOAK",
+          season_title: "GARAIKO NABARMENDUAK",
+          season_subtitle:
+            "Hilabeteko produktu lokalekin diseinatutako proposamen esklusiboak.",
+          season_item1_name: "Marrubiak Txokolatearekin",
+          season_item1_desc:
+            "Marrubiak unean urtutako %70 txokolate beltzarekin estalita.",
+          season_item2_name: "Overnight Chia",
+          season_item2_desc:
+            "Chia pudding-a koko-esnearekin, basoko fruituekin eta eztiarekin.",
+          season_item3_name: "Jengibre jaurtiketa",
+          season_item3_desc:
+            "Energia hutsa: jengibre fresko extractua hotzean prentsatua, limoia eta sagarrarekin.",
+        },
+      };
+
+      function changeLanguage(lang) {
+        localStorage.setItem("obaia_lang", lang);
+        document.documentElement.lang = lang;
+
+        // Actualizar textos normales
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+
+        // Actualizar textos con HTML (para <br>)
+        document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-html");
+          if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+          }
+        });
+
+        // Actualizar botones idioma
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.id === `btn-${lang}`);
+          btn.setAttribute(
+            "aria-pressed",
+            btn.id === `btn-${lang}` ? "true" : "false",
+          );
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Mostrar CTA desktop
+        const ctaDesktop = document.getElementById("nav-cta-desktop");
+        if (window.innerWidth >= 768) ctaDesktop.style.display = "block";
+        window.addEventListener("resize", () => {
+          ctaDesktop.style.display =
+            window.innerWidth >= 768 ? "block" : "none";
+        });
+
+        // Idioma inicial
+        const savedLang = localStorage.getItem("obaia_lang");
+        const browserLang = navigator.language.split("-")[0];
+        const startLang =
+          savedLang || (translations[browserLang] ? browserLang : "es");
+        changeLanguage(startLang);
+
+        // Navbar scroll
+        const navbar = document.getElementById("navbar");
+        const navInner = document.getElementById("nav-inner");
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (window.scrollY > 50) {
+              navbar.classList.add("scrolled");
+              navInner.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+              navInner.classList.remove("scrolled");
+            }
+          },
+          { passive: true },
+        );
+
+        // Scroll reveal
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target); // solo una vez
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        document
+          .querySelectorAll(".fade-up:not(.is-visible)")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+
+</body>
+</html>

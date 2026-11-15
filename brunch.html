@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8"/>
+<script src="./assets/obaia-entry.js?v=18"></script>
+<link rel="preload" as="image" href="./assets/brand/logo-principal-oficial-cream.svg"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OBAIA Brunch | Plaza Bilbao, Donostia</title>
+<meta name="description" content="Carta provisional de OBAIA Brunch en Plaza Bilbao, Donostia. Salados, dulces y bebidas."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<style>
+      /* ===== VARIABLES ===== */
+      :root {
+        --white: #fffbf0;
+        --baie: #751b38;
+        --baie-dark: #3b0e1c;
+        --maracuja: #f4b606;
+        --pepin: #3a3705;
+        --font: "Montserrat", sans-serif;
+      }
+
+      /* ===== BASE & RESET ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: var(--font);
+        background-color: var(--white);
+        color: var(--baie);
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      /* ===== TYPOGRAPHY ===== */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .body-text {
+        font-weight: 400;
+        line-height: 1.6;
+      }
+      .translation-text {
+        font-weight: 500;
+        font-style: italic;
+        opacity: 0.6;
+        font-size: 0.85em;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        width: 100%;
+      }
+
+      /* ===== NAVBAR ===== */
+      #navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        padding: 1.5rem;
+        transition: padding 0.5s ease;
+      }
+      #navbar.scrolled {
+        padding: 1rem 1.5rem;
+      }
+      #nav-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 9999px;
+        padding: 0.75rem 1.5rem;
+        transition: 0.5s;
+      }
+      #nav-inner.scrolled {
+        background-color: rgba(255, 251, 240, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 8px rgba(117, 24, 56, 0.08);
+        border: 1px solid rgba(117, 24, 56, 0.1);
+      }
+      .nav-logo {
+        font-size: 1.875rem;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        color: var(--baie);
+        cursor: pointer;
+      }
+      .nav-links {
+        display: none;
+        gap: 2.5rem;
+      }
+      .nav-link {
+        font-weight: 700;
+        font-size: 0.875rem;
+        transition: 0.3s;
+      }
+      .nav-cta {
+        background-color: var(--baie);
+        color: var(--white);
+        padding: 0.75rem 2rem;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        transition: 0.3s;
+      }
+
+      /* ===== NEW MODERN GRID DESIGN ===== */
+      .menu-header {
+        padding: 3rem 1.5rem 5rem;
+        text-align: center;
+      }
+
+      .menu-section {
+        margin-bottom: 6rem;
+      }
+
+      .section-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: flex-start;
+      }
+
+      .section-visual {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4/5;
+        border-radius: 4rem;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(59, 14, 28, 0.1);
+      }
+
+      .section-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .menu-section:hover .section-visual img {
+        transform: scale(1.05);
+      }
+
+      .section-content {
+        padding: 1rem 0;
+      }
+
+      .section-title {
+        font-size: clamp(3rem, 8vw, 5rem);
+        color: var(--baie);
+        margin-bottom: 2rem;
+        letter-spacing: -0.05em;
+      }
+
+      /* Item styling */
+      .product-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      .product-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(117, 24, 56, 0.08);
+        padding-bottom: 1.5rem;
+      }
+
+      .product-info h3 {
+        font-size: 1.4rem;
+        color: var(--baie);
+        margin-bottom: 0.4rem;
+      }
+
+      .product-desc {
+        font-size: 0.95rem;
+        color: rgba(59, 14, 28, 0.7);
+        margin-bottom: 0.2rem;
+      }
+
+      .product-price {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: var(--baie-dark);
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .category-note {
+        background: var(--white);
+        border: 2px solid var(--maracuja);
+        border-radius: 1.5rem;
+        padding: 0.5rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+      }
+
+      .subcategory-label {
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        color: var(--maracuja);
+        margin: 3rem 0 1.5rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .subcategory-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--maracuja);
+        opacity: 0.3;
+      }
+
+      /* Responsive PC */
+      @media (min-width: 992px) {
+        .nav-links {
+          display: flex;
+        }
+        .section-layout {
+          grid-template-columns: 1fr 1fr;
+          gap: 6rem;
+        }
+        /* Alternar orden visual */
+        .menu-section:nth-child(even) .section-visual {
+          grid-column: 2;
+        }
+        .menu-section:nth-child(even) .section-content {
+          grid-column: 1;
+          grid-row: 1;
+        }
+        .section-visual {
+          position: sticky;
+          top: 10rem;
+        }
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: var(--white);
+        padding: 5rem 1.5rem 2.5rem;
+        border-top: 1px solid rgba(117, 24, 56, 0.1);
+      }
+      .footer-inner {
+        max-width: 1152px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .lang-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+        font-weight: 700;
+      }
+      .lang-btn {
+        opacity: 0.5;
+        transition: 0.3s;
+      }
+      .lang-btn.active {
+        opacity: 1;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+      .season-price {
+        background: var(--maracuja);
+        color: var(--baie-dark);
+        /* 0.4rem arriba/abajo y 1.2rem izquierda/derecha */
+        padding: 1rem;
+        border-radius: 999px;
+        font-weight: 800;
+        /* Fuerza a que el texto siempre esté en una sola línea */
+        white-space: nowrap;
+        /* Asegura que se comporte bien como etiqueta */
+        display: inline-block;
+        font-size: 0.85rem; /* Opcional: un pelín más pequeño para móvil */
+      }
+      /* Ajuste específico para móvil */
+      @media (max-width: 767px) {
+        .season-price {
+          padding-top: 1.5rem;
+          font-weight: 900;
+          font-size: 0.87rem;
+        }
+      }
+      .capsule {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid currentColor;
+        border-radius: 9999px;
+
+        /* Definimos una altura fija para evitar el espacio fantasma */
+        height: 1.4rem;
+        padding: 0.25rem 1rem; /* Solo padding a los lados */
+        margin-top: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+
+        /* Forzamos que el texto no tenga espacio extra arriba/abajo */
+        line-height: 0;
+      }
+      .nav-logo {
+        font-size: 1.875rem;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        color: var(--baie);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        /* El tamaño del contenedor */
+        width: 140px;
+        height: 40px;
+      }
+      .nav-logo:hover {
+        transform: scale(1.05);
+      }
+      .obaia-logo-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        /* Quitamos cualquier fondo que pudiera tener */
+        background: transparent;
+      }
+    </style>
+<link href="./assets/obaia-motion.css?v=15" rel="stylesheet"/>
+
+<script defer="" src="./assets/obaia-motion.js?v=18"></script>
+
+
+
+<link href="./assets/visor-productos.css?v=4" rel="stylesheet"/>
+<script defer="" src="./assets/fotos-brunch.js"></script>
+<script defer="" src="./assets/visor-productos.js?v=5"></script>
+<link href="./assets/obaia-viva.css?v=14" rel="stylesheet"/><script defer="True" src="./assets/obaia-viva.js?v=10"></script><link rel="stylesheet" href="./assets/plaza-bilbao.css?v=3"/>
+</head>
+<body>
+<div class="fruit-intro" aria-hidden="true"><img class="intro-brand" src="./assets/brand/logo-principal-oficial.svg" alt=""/><output>0%</output><div class="fruit-pile"></div></div>
+<div aria-hidden="true" class="obaia-wipe"><img alt="" src="./assets/brand/logo-principal-oficial-cream.svg"/></div>
+<!-- NAV -->
+<nav id="navbar">
+<div id="nav-inner">
+<a class="nav-logo" href="index.html">
+<svg aria-hidden="true" class="obaia-logo-svg" viewbox="0 0 346.4 85.4" xmlns="http://www.w3.org/2000/svg">
+<path d="M45.3 4.1C22.7 4.1 5 21.5 5 43.7 5 66 22.7 83.4 45.3 83.4S85.5 66 85.5 43.7c0-22.2-17.7-39.6-40.2-39.6m18 58.2c-4.5 4.5-10.9 6.9-18 6.9C30.4 69.2 20 58.7 20 43.8s10.4-25.4 25.2-25.4c7.1 0 13.5 2.4 18 6.9 4.7 4.6 7.1 11 7.1 18.5.1 7.5-2.4 13.9-7 18.5M140.7 36.2c2.3-2.1 6.6-6.3 6.6-14.4 0-11.1-8.1-16.5-24.6-16.5H92.6v1.2s.3 12.8.5 27c0 1.8-.1 27.1-.2 27.9-.3 11.1-.7 19.8-.7 19.8l-.1 1.2h35.6c19.4 0 28-13.1 28-26 .2-8.7-5.1-15.7-15-20.2m-31.2-17.6h12.6c3.3 0 6.7.3 8.7 2.4.8.8 1.3 1.9 1.6 3.2.5 2.5-.2 5.3-1.9 7.2-1.1 1.2-2.6 2.2-4.6 3.1-1.4.6-2.9 1.1-4.3 1.5-3.4 1-7.7 2.5-13.2 6.1v-.2c0-7.8-.1-22.6-.1-23.4zm14.1 50.6h-15.3V58.7c0-2.5 9.5-11.5 19.5-11.6h.5c8.8 0 12.6 3.2 12.6 10.6 0 8-5.2 11.5-17.3 11.5M256.4 38.4c0-.5.2-11.3.4-20 .1-6.7.3-12.6.3-13.2V4h-14.5v1.2c0 .6.2 6.4.3 13 .2 8.8.5 19.7.5 20.2 0 14.7-.5 30.7-.7 38.3-.1 2.4-.1 4-.1 4.5v1.2h14.6v-1.2c0-.5 0-2.1-.1-4.6-.2-7.6-.7-23.6-.7-38.2M234.7 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1h31.8c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6H184c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.2 12.2 10.8 25.7 11.4 28.3M343.2 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1H320c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6h-23.3c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.1 12.2 10.7 25.7 11.4 28.3" fill="currentColor"></path></svg></a>
+<div class="nav-links">
+<a class="nav-link" data-i18n="nav_temporada" href="index.html#temporada">TEMPORADA</a>
+<a class="nav-link" data-i18n="nav_historia" href="index.html#historia">HISTORIA</a>
+<a class="nav-link" data-i18n="nav_productos" href="index.html#productos">PRODUCTOS</a>
+<a class="nav-link" data-i18n="nav_resenas" href="index.html#resenas">RESEÑAS</a>
+</div>
+<a class="nav-cta" data-i18n="btn_home" href="index.html">INICIO</a>
+</div>
+</nav>
+<section aria-labelledby="carta-titulo" class="ab menu-juice-hero brunch-cup-hero" data-stage="menu" id="carta-inicio">
+<div class="ab-stage">
+<h1 aria-label="OBAIA Brunch" class="ab-title" id="carta-titulo">
+<span class="ab-line" data-ab-split="" data-menu-line="0">OBAIA</span>
+<span class="ab-line"><span data-ab-split="" data-menu-line="1">BRUNCH</span></span>
+</h1>
+<div class="ab-bowl" data-ab-bowl=""><img alt="Cappuccino" fetchpriority="high" height="1050" src="./assets/productos/brunch-cup.webp" width="1050"/></div>
+</div>
+</section>
+<header class="brunch-heading container"><p>Plaza Bilbao, 2 · Donostia</p><p class="preview-note" data-i18n="provisional">Carta provisional · Platos, fotos y precios orientativos.</p></header>
+<nav class="menu-category-nav container" aria-label="OBAIA Brunch"><a data-i18n="br_salados" href="#salados">Salados</a><a data-i18n="br_dulces" href="#dulces">Dulces</a><a data-i18n="br_bebidas" href="#bebidas">Café y zumos</a></nav>
+<main class="container brunch-menu"><section class="menu-section" id="salados"><div class="section-layout"><div class="section-visual"><img alt="" loading="lazy" src="./img/brunch-plaza-bilbao.webp"/></div><div class="section-content"><h2 class="section-title" data-i18n="br_salados">Salados</h2><div class="product-list"><article class="product-item"><div class="product-info"><h3><label for="photo-tosta"><span class="photo-product-name" data-i18n="salados0">Tostada de aguacate</span></label></h3><p class="product-desc" data-i18n="salados0_desc">Pan de masa madre, aguacate, huevo poché y aceite de oliva.</p></div><div class="product-actions"><span class="product-price">9,50 €</span><button aria-controls="product-photo-dialog" aria-haspopup="dialog" class="product-photo-trigger" data-product-photo="tosta" type="button" id="photo-tosta"><span aria-hidden="true" class="product-photo-cue"><span class="product-photo-face"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8 5.5 9.5 3h5L16 5.5h3A2 2 0 0 1 21 7.5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z"></path><circle cx="12" cy="12.5" r="3.5"></circle></svg><span class="product-photo-label">Ver foto</span></span></span></button></div></article>
+<article class="product-item"><div class="product-info"><h3><label for="photo-ricotta"><span class="photo-product-name" data-i18n="salados1">Tomate y ricotta</span></label></h3><p class="product-desc" data-i18n="salados1_desc">Tostada con ricotta, tomate rallado y albahaca fresca.</p></div><div class="product-actions"><span class="product-price">8,50 €</span><button aria-controls="product-photo-dialog" aria-haspopup="dialog" class="product-photo-trigger" data-product-photo="ricotta" type="button" id="photo-ricotta"><span aria-hidden="true" class="product-photo-cue"><span class="product-photo-face"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8 5.5 9.5 3h5L16 5.5h3A2 2 0 0 1 21 7.5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z"></path><circle cx="12" cy="12.5" r="3.5"></circle></svg><span class="product-photo-label">Ver foto</span></span></span></button></div></article>
+<article class="product-item"><div class="product-info"><h3><label for="photo-eggs"><span class="photo-product-name" data-i18n="salados2">Huevos de la plaza</span></label></h3><p class="product-desc" data-i18n="salados2_desc">Huevos revueltos, setas salteadas y pan tostado.</p></div><div class="product-actions"><span class="product-price">10,50 €</span><button aria-controls="product-photo-dialog" aria-haspopup="dialog" class="product-photo-trigger" data-product-photo="eggs" type="button" id="photo-eggs"><span aria-hidden="true" class="product-photo-cue"><span class="product-photo-face"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8 5.5 9.5 3h5L16 5.5h3A2 2 0 0 1 21 7.5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z"></path><circle cx="12" cy="12.5" r="3.5"></circle></svg><span class="product-photo-label">Ver foto</span></span></span></button></div></article>
+</div></div></div></section>
+<section class="menu-section" id="dulces"><div class="section-layout"><div class="section-visual"><img alt="" loading="lazy" src="./img/overnight_chia.webp"/></div><div class="section-content"><h2 class="section-title" data-i18n="br_dulces">Dulces</h2><div class="product-list"><article class="product-item"><div class="product-info"><h3><label for="photo-chia"><span class="photo-product-name" data-i18n="dulces0">Overnight de chía</span></label></h3><p class="product-desc" data-i18n="dulces0_desc">Chía y avena reposadas con fruta de temporada y granola.</p></div><div class="product-actions"><span class="product-price">6,50 €</span><button aria-controls="product-photo-dialog" aria-haspopup="dialog" class="product-photo-trigger" data-product-photo="chia" type="button" id="photo-chia"><span aria-hidden="true" class="product-photo-cue"><span class="product-photo-face"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8 5.5 9.5 3h5L16 5.5h3A2 2 0 0 1 21 7.5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z"></path><circle cx="12" cy="12.5" r="3.5"></circle></svg><span class="product-photo-label">Ver foto</span></span></span></button></div></article>
+<article class="product-item"><div class="product-info"><h3><label for="photo-yogur"><span class="photo-product-name" data-i18n="dulces1">Yogur y frutos rojos</span></label></h3><p class="product-desc" data-i18n="dulces1_desc">Yogur cremoso con frutos rojos y un hilo de miel.</p></div><div class="product-actions"><span class="product-price">6,00 €</span><button aria-controls="product-photo-dialog" aria-haspopup="dialog" class="product-photo-trigger" data-product-photo="yogur" type="button" id="photo-yogur"><span aria-hidden="true" class="product-photo-cue"><span class="product-photo-face"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8 5.5 9.5 3h5L16 5.5h3A2 2 0 0 1 21 7.5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z"></path><circle cx="12" cy="12.5" r="3.5"></circle></svg><span class="product-photo-label">Ver foto</span></span></span></button></div></article>
+</div></div></div></section>
+<section class="menu-section" id="bebidas"><div class="section-layout"><div class="section-visual"><img alt="" loading="lazy" src="./img/obaia_zumo_natural.webp"/></div><div class="section-content"><h2 class="section-title" data-i18n="br_bebidas">Café y zumos</h2><div class="product-list"><article class="product-item"><div class="product-info"><h3><label for="photo-cup"><span class="photo-product-name" data-i18n="bebidas0">Cappuccino</span></label></h3><p class="product-desc" data-i18n="bebidas0_desc">Espresso y leche con una capa de espuma fina.</p></div><div class="product-actions"><span class="product-price">3,00 €</span><button aria-controls="product-photo-dialog" aria-haspopup="dialog" class="product-photo-trigger" data-product-photo="cup" type="button" id="photo-cup"><span aria-hidden="true" class="product-photo-cue"><span class="product-photo-face"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8 5.5 9.5 3h5L16 5.5h3A2 2 0 0 1 21 7.5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z"></path><circle cx="12" cy="12.5" r="3.5"></circle></svg><span class="product-photo-label">Ver foto</span></span></span></button></div></article>
+<article class="product-item"><div class="product-info"><h3><label for="photo-zumo"><span class="photo-product-name" data-i18n="bebidas1">Zumo de naranja</span></label></h3><p class="product-desc" data-i18n="bebidas1_desc">Naranja recién exprimida.</p></div><div class="product-actions"><span class="product-price">4,00 €</span><button aria-controls="product-photo-dialog" aria-haspopup="dialog" class="product-photo-trigger" data-product-photo="zumo" type="button" id="photo-zumo"><span aria-hidden="true" class="product-photo-cue"><span class="product-photo-face"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M8 5.5 9.5 3h5L16 5.5h3A2 2 0 0 1 21 7.5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z"></path><circle cx="12" cy="12.5" r="3.5"></circle></svg><span class="product-photo-label">Ver foto</span></span></span></button></div></article>
+</div></div></div></section>
+<a class="bilbao-link" href="carta.html" data-i18n="other_menu">Ver carta de açaís</a></main>
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="nav-logo" style="margin-bottom: 2rem">
+<svg aria-hidden="true" class="obaia-logo-svg" viewbox="0 0 346.4 85.4" xmlns="http://www.w3.org/2000/svg">
+<path d="M45.3 4.1C22.7 4.1 5 21.5 5 43.7 5 66 22.7 83.4 45.3 83.4S85.5 66 85.5 43.7c0-22.2-17.7-39.6-40.2-39.6m18 58.2c-4.5 4.5-10.9 6.9-18 6.9C30.4 69.2 20 58.7 20 43.8s10.4-25.4 25.2-25.4c7.1 0 13.5 2.4 18 6.9 4.7 4.6 7.1 11 7.1 18.5.1 7.5-2.4 13.9-7 18.5M140.7 36.2c2.3-2.1 6.6-6.3 6.6-14.4 0-11.1-8.1-16.5-24.6-16.5H92.6v1.2s.3 12.8.5 27c0 1.8-.1 27.1-.2 27.9-.3 11.1-.7 19.8-.7 19.8l-.1 1.2h35.6c19.4 0 28-13.1 28-26 .2-8.7-5.1-15.7-15-20.2m-31.2-17.6h12.6c3.3 0 6.7.3 8.7 2.4.8.8 1.3 1.9 1.6 3.2.5 2.5-.2 5.3-1.9 7.2-1.1 1.2-2.6 2.2-4.6 3.1-1.4.6-2.9 1.1-4.3 1.5-3.4 1-7.7 2.5-13.2 6.1v-.2c0-7.8-.1-22.6-.1-23.4zm14.1 50.6h-15.3V58.7c0-2.5 9.5-11.5 19.5-11.6h.5c8.8 0 12.6 3.2 12.6 10.6 0 8-5.2 11.5-17.3 11.5M256.4 38.4c0-.5.2-11.3.4-20 .1-6.7.3-12.6.3-13.2V4h-14.5v1.2c0 .6.2 6.4.3 13 .2 8.8.5 19.7.5 20.2 0 14.7-.5 30.7-.7 38.3-.1 2.4-.1 4-.1 4.5v1.2h14.6v-1.2c0-.5 0-2.1-.1-4.6-.2-7.6-.7-23.6-.7-38.2M234.7 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1h31.8c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6H184c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.2 12.2 10.8 25.7 11.4 28.3M343.2 80.7c-.2-.5-18.7-40.7-27.8-60.9-3.5-7.7-6-13.5-6.6-15l-.3-.7h-8.6l-.3.7c-.6 1.5-3.2 7.3-6.6 15-9 20.2-27.6 60.5-27.8 60.9l-.8 1.7h18.3l.2-.9c0-.1 2.3-8.1 3.5-11.5.2-.4.4-.9.6-1.2.4-.8 1-1.1 1.3-1.1H320c.3 0 .9.3 1.3 1.1.1.3.3.7.6 1.3 1.1 3.3 3.4 11.3 3.4 11.4l.2.9h18.3zm-27.4-25.6h-23.3c.6-2.5 6.3-16.1 11.5-28.2.1-.2.2-.3.2-.5.1.1.1.3.2.4 5.1 12.2 10.7 25.7 11.4 28.3" fill="currentColor"></path>
+</svg>
+</div>
+<div class="lang-btns">
+<button class="lang-btn" id="btn-es" onclick="changeLanguage('es')">
+            ES
+          </button>
+<span style="opacity: 0.3">|</span>
+<button class="lang-btn" id="btn-en" onclick="changeLanguage('en')">
+            EN
+          </button>
+<span style="opacity: 0.3">|</span>
+<button class="lang-btn" id="btn-eu" onclick="changeLanguage('eu')">
+            EU
+          </button>
+</div>
+<p class="body-text" style="opacity: 0.4; font-size: 0.75rem">
+          © 2026 OBAIA · Donostia San Sebastián
+        </p>
+</div>
+</footer>
+<script>
+      const translations = {
+        es: {
+          provisional: "Carta provisional · Platos, fotos y precios orientativos.",
+          other_menu: "Ver carta de açaís",
+          br_salados: "Salados",
+          salados0: "Tostada de aguacate",
+          salados0_desc: "Pan de masa madre, aguacate, huevo poché y aceite de oliva.",
+          salados1: "Tomate y ricotta",
+          salados1_desc: "Tostada con ricotta, tomate rallado y albahaca fresca.",
+          salados2: "Huevos de la plaza",
+          salados2_desc: "Huevos revueltos, setas salteadas y pan tostado.",
+          br_dulces: "Dulces",
+          dulces0: "Overnight de chía",
+          dulces0_desc: "Chía y avena reposadas con fruta de temporada y granola.",
+          dulces1: "Yogur y frutos rojos",
+          dulces1_desc: "Yogur cremoso con frutos rojos y un hilo de miel.",
+          br_bebidas: "Café y zumos",
+          bebidas0: "Cappuccino",
+          bebidas0_desc: "Espresso y leche con una capa de espuma fina.",
+          bebidas1: "Zumo de naranja",
+          bebidas1_desc: "Naranja recién exprimida.",
+
+          pb_title: "Brunch en Plaza Bilbao",
+          pb_intro: "Açaí, brunch, café y menú del día en el centro de Donostia.",
+          pb_link: "Descubrir Plaza Bilbao",
+          pb_pending: "La carta ampliada estará disponible aquí.",
+          pb_map: "Cómo llegar",
+
+          nav_historia: "HISTORIA",
+          nav_productos: "PRODUCTOS",
+          nav_resenas: "RESEÑAS",
+          btn_home: "INICIO",
+          menu_title: "Nuestra Carta",
+          menu_tagline: "Açaí & Juicy Bar",
+          cat_bowls: "Açaí Bowls",
+          cat_smoothies: "Smoothies",
+          cat_juices: "Zumos",
+          bowl_note_title: "Toppings y salsa a tu gusto",
+          bowl_note_title2: "Batidos funcionales y 100% naturales.",
+          bowl_note_title3: "100% COLD PRESSED · SIN AZÚCAR · SIN AGUA",
+          item_acai_mango: "Açaí Mango",
+          desc_acai_mango:
+            "Plátano, Granola, Mango Chia pudding, Mango fruta, Piña.",
+          item_acai_berries: "Açaí Berries",
+          desc_acai_berries:
+            "Plátano, Granola, Arándanos, Fresa, Salsa de frambuesa.",
+          item_obaia_acai: "Obaia Açaí",
+          desc_obaia_acai: "Plátano, Granola, Kiwi, Piña, Fresa.",
+          item_ensalada: "Ensalada de Frutas",
+          desc_ensalada: "Fruta de temporada cortada al momento.",
+          overnight_oat: "Opción Overnight Oat con Chía disponible",
+          sub_classic: "Clásicos",
+          sub_signature: "Signature",
+          sub_natural: "Naturales",
+          sub_super: "Super Zumos",
+          extras_title: "Potencia tu pedido (extra)",
+        },
+        en: {
+          provisional: "Preview menu · Dishes, photos and prices are illustrative.",
+          other_menu: "View the açaí menu",
+          br_salados: "Savoury",
+          salados0: "Avocado toast",
+          salados0_desc: "Sourdough, avocado, poached egg and olive oil.",
+          salados1: "Tomato & ricotta",
+          salados1_desc: "Toast with ricotta, grated tomato and fresh basil.",
+          salados2: "Plaza eggs",
+          salados2_desc: "Scrambled eggs, sautéed mushrooms and toast.",
+          br_dulces: "Sweet",
+          dulces0: "Overnight chia",
+          dulces0_desc: "Overnight chia and oats with seasonal fruit and granola.",
+          dulces1: "Yoghurt & berries",
+          dulces1_desc: "Creamy yoghurt with berries and a drizzle of honey.",
+          br_bebidas: "Coffee & juice",
+          bebidas0: "Cappuccino",
+          bebidas0_desc: "Espresso and milk with a fine layer of foam.",
+          bebidas1: "Orange juice",
+          bebidas1_desc: "Freshly squeezed orange juice.",
+
+          pb_title: "Brunch at Plaza Bilbao",
+          pb_intro: "Açaí, brunch, coffee and a daily menu in central San Sebastián.",
+          pb_link: "Explore Plaza Bilbao",
+          pb_pending: "The full menu will be available here.",
+          pb_map: "Get directions",
+
+          nav_historia: "HISTORY",
+          nav_temporada: "SEASONAL",
+          nav_productos: "PRODUCTS",
+          nav_resenas: "REVIEWS",
+          btn_home: "HOME",
+          menu_title: "Our Menu",
+          menu_tagline: "Açaí & Juicy Bar",
+          cat_bowls: "AçaíBowls",
+          cat_smoothies: "Smoothies",
+          cat_juices: "Juices",
+          bowl_note_title: "Toppings and sauce of your choice",
+          bowl_note_title2: "Functional bowls and 100% natural",
+          bowl_note_title3: "100% COLD PRESSED · NO SUGAR · NO WATER",
+          item_acai_mango: "Açaí Mango",
+          desc_acai_mango:
+            "Banana, Granola, Mango Chia pudding, Mango fruit, Pineapple.",
+          item_acai_berries: "Açaí Berries",
+          desc_acai_berries:
+            "Banana, Granola, Blueberries, Strawberry, Raspberry sauce.",
+          item_obaia_acai: "Obaia Açaí",
+          desc_obaia_acai: "Banana, Granola, Kiwi, Pineapple, Strawberry.",
+          item_ensalada: "Fruit Salad",
+          desc_ensalada: "Freshly cut seasonal fruit.",
+          overnight_oat: "Overnight Oat with Chia option available",
+          sub_classic: "Classic",
+          sub_signature: "Signature",
+          sub_natural: "Natural",
+          sub_super: "Super Juices",
+          extras_title: "Boost your order (extra)",
+        },
+        eu: {
+          provisional: "Behin-behineko karta · Platerak, argazkiak eta prezioak orientagarriak dira.",
+          other_menu: "Ikusi açaí-karta",
+          br_salados: "Gaziak",
+          salados0: "Ahuakate-tosta",
+          salados0_desc: "Ore amako ogia, ahuakatea, arrautza potxatua eta oliba-olioa.",
+          salados1: "Tomatea eta ricotta",
+          salados1_desc: "Ogi txigortua ricottarekin, tomate birrinduarekin eta albahaka freskoarekin.",
+          salados2: "Plazako arrautzak",
+          salados2_desc: "Arrautza nahasiak, perretxiko salteatuak eta ogi txigortua.",
+          br_dulces: "Gozoak",
+          dulces0: "Chia gosaria",
+          dulces0_desc: "Chia eta oloa, gau osoan beratuak, sasoiko frutarekin eta granolarekin.",
+          dulces1: "Jogurta eta fruitu gorriak",
+          dulces1_desc: "Jogurt krematsua fruitu gorriekin eta ezti apur batekin.",
+          br_bebidas: "Kafea eta zukuak",
+          bebidas0: "Kaputxinoa",
+          bebidas0_desc: "Espressoa eta esnea, apar geruza fin batekin.",
+          bebidas1: "Laranja-zukua",
+          bebidas1_desc: "Laranja-zuku egin berria.",
+
+          pb_title: "Bruncha Bilbo plazan",
+          pb_intro: "Açaía, bruncha, kafea eta eguneko menua Donostiako erdigunean.",
+          pb_link: "Ezagutu Bilbo plazako lokala",
+          pb_pending: "Karta zabaldua hemen egongo da eskuragarri.",
+          pb_map: "Nola iritsi",
+
+          nav_historia: "HISTORIA",
+          nav_temporada: "GARAIKOAK",
+          nav_productos: "PRODUKTUAK",
+          nav_resenas: "IRITZIAK",
+          btn_home: "HASIERA",
+          menu_title: "Gure Karta",
+          menu_tagline: "Açaí & Juicy Bar",
+          cat_bowls: "Açaí Bowl-ak",
+          cat_smoothies: "Smoothie-ak",
+          cat_juices: "Zukuak",
+          bowl_note_title: "Toppingak eta saltsa zure gustura",
+          bowl_note_title2: "Irabiaki funtzionalak eta %100 naturalak.",
+          bowl_note_title3:
+            "100% HOTZEAN PRETSATUA · AZUKRERIK GABE · URIK GABE",
+          item_acai_mango: "Açaí Mangoa",
+          desc_acai_mango:
+            "Platanoa, Granola, Mango Chia puddinga, Mango fruta, Piña.",
+          item_acai_berries: "Açaí Berries",
+          desc_acai_berries:
+            "Platanoa, Granola, Arandanoak, Marrubia, Mugurdi saltsa.",
+          item_obaia_acai: "Obaia Açaí",
+          desc_obaia_acai: "Platanoa, Granola, Kiwia, Piña, Marrubia.",
+          item_ensalada: "Fruta Entsalada",
+          desc_ensalada: "Garaiko fruta freskoa.",
+          overnight_oat: "Overnight Oat Chia-rekin aukera eskuragarri",
+          sub_classic: "Klasikoak",
+          sub_signature: "Signature",
+          sub_natural: "Naturalak",
+          sub_super: "Super Zukuak",
+          extras_title: "Indartu zure eskaera (extra)",
+        },
+      };
+
+      function changeLanguage(lang) {
+        localStorage.setItem("obaia_lang", lang);
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (translations[lang][key]) el.textContent = translations[lang][key];
+        });
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.id === `btn-${lang}`);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("obaia_lang") || "es";
+        changeLanguage(savedLang);
+
+        const navbar = document.getElementById("navbar");
+        const navInner = document.getElementById("nav-inner");
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (window.scrollY > 50) {
+              navbar.classList.add("scrolled");
+              navInner.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+              navInner.classList.remove("scrolled");
+            }
+          },
+          { passive: true },
+        );
+      });
+    </script>
+
+
+<dialog aria-describedby="photo-product-description" aria-labelledby="photo-product-title" class="product-photo-dialog" id="product-photo-dialog">
+<article class="product-photo-card">
+<button aria-label="Cerrar foto" class="product-photo-close" data-photo-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+<div class="product-photo-media">
+<div aria-hidden="true" class="product-photo-loading"><img alt="" height="80" src="./assets/brand/mascota-oficial.svg" width="64"/></div>
+<img alt="" data-photo-image="" decoding="async" height="1024" width="1536"/>
+<p class="product-photo-error" data-photo-error="" role="status">No se ha podido cargar la foto.</p>
+</div>
+<div class="product-photo-copy">
+<p class="product-photo-category" data-photo-category=""></p>
+<h2 class="product-photo-title" data-photo-title="" id="photo-product-title"></h2>
+<p class="product-photo-description" data-photo-description="" id="photo-product-description"></p>
+<p class="product-photo-note" data-photo-note="">Sugerencia de presentación.</p>
+</div>
+</article>
+</dialog>
+</body>
+</html>

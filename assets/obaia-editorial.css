@@ -1,0 +1,40 @@
+/* Claude-inspired polish: photographic reveals, reviews and gallery progress.
+   No layout or brand redesign. Never hide content before JS opts in. */
+@media (prefers-reduced-motion: no-preference) {
+  .editorial-photo-reveal { position: relative; isolation: isolate; overflow: hidden; }
+  .editorial-photo-reveal::after {
+    content: ''; position: absolute; inset: -1px; z-index: 5;
+    background: var(--white, #fffaf1); pointer-events: none;
+    transform: translate3d(0,-102%,0);
+  }
+  .editorial-photo-reveal.editorial-photo-wait:not(.editorial-photo-show)::after {
+    transform: translate3d(0,0,0);
+  }
+  .editorial-photo-reveal.editorial-photo-show::after {
+    transition: transform .98s cubic-bezier(.76,0,.24,1) var(--editorial-delay,0ms);
+    transform: translate3d(0,-102%,0);
+  }
+  .editorial-quotes .resena {
+    opacity: 0; transform: translate3d(0,24px,0);
+    transition: opacity .7s ease,transform 1s var(--obaia-ease);
+    transition-delay: calc(var(--quote-index,0) * 115ms);
+  }
+  .editorial-quotes.editorial-quotes-in .resena {
+    opacity: 1; transform: none;
+  }
+  @media (min-width:900px) {
+    .historia-img-wrap img { scale: 1.05; }
+  }
+}
+.editorial-slider-progress {
+  width: min(100%, 180px); height: 2px; margin: 18px auto 0;
+  background: color-mix(in srgb, var(--baie,#751b38) 17%, transparent);
+  overflow: hidden; border-radius: 6px;
+}
+.editorial-slider-progress[hidden] { display: none; }
+.editorial-slider-progress > span {
+  display: block; width: 100%; height: 100%;
+  background: var(--baie,#751b38); transform: scaleX(0);
+  transform-origin: left center;
+}
+

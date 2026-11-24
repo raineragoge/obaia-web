@@ -2,7 +2,7 @@
  const copy={
   '.community-kicker':['COMUNIDAD OBAIA','OBAIA COMMUNITY','OBAIA KOMUNITATEA'],
   '#community-title':['Tu próxima visita empieza aquí.','Your next visit starts here.','Zure hurrengo bisita hemen hasten da.'],
-  '.community-copy > p:not(.community-kicker)':['Un espacio para quienes vuelven. Entra en nuestra comunidad y accede a los cupones de nuestro programa de fidelidad.','A place for those who come back. Join our community and access coupons from our loyalty programme.','Itzultzen direnentzako gunea. Sartu gure komunitatean eta eskuratu gure fidelizazio-programako kupoiak.'],
+  '.community-copy > p:not(.community-kicker)':['Un espacio para quienes vuelven. Entra en nuestra comunidad y accede a tus cupones.','A place for those who come back. Join our community and access your coupons.','Itzultzen direnentzako gunea. Sartu gure komunitatean eta eskuratu zure kupoiak.'],
   '.community-cta':['Descubre tus cupones','Discover your coupons','Ezagutu zure kupoiak'],
   '.review-action > p':['¿Has compartido un momento con nosotros?','Have you spent a moment with us?','Gurekin une bat partekatu duzu?'],
   '.review-cta-label':['Déjanos tu reseña en Google','Leave us a Google review','Utzi zure iritzia Googlen'],

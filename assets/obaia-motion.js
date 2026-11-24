@@ -193,11 +193,13 @@
     const heights=Array(cols).fill(0);
     const rows=Math.max(3,Math.ceil(innerHeight*.87/cell));
     let frame=0;
-    let revealed=false;
+    let revealed=false,covered=false;
     function reveal() {
       if(revealed) return;
       revealed=true;
-      panel.classList.add('uncover');
+      panel.remove();
+      if(!reduced.matches) dispatchEvent(new Event('obaia:intro-arrival'));
+      else document.documentElement.classList.remove('obaia-leaving','intro-transition-active');
       dispatchEvent(new Event('obaia:home-reveal'));
     }
     function finish() {
@@ -240,7 +242,10 @@
     function tick(now) {
       const elapsed=now-start;
       percent.textContent=Math.min(100,Math.floor(Math.max(0,elapsed-240)/16))+'%';
-      if(elapsed>=2350) panel.classList.add('covered');
+      if(elapsed>=2350 && !covered) {
+        covered=true;
+        document.documentElement.classList.add('intro-transition-active','obaia-leaving');
+      }
       if(elapsed>=2810) reveal();
       if(elapsed>=3330) finish();
       else frame=requestAnimationFrame(tick);
@@ -262,6 +267,7 @@
     function reveal() {
       if(!root.classList.contains('obaia-arriving')) return;
       cancelArrival();
+      root.classList.remove('intro-transition-active');
       dispatchEvent(new Event('obaia:arrived'));
     }
     function playArrival() {
@@ -280,6 +286,7 @@
       if(event.target===wipe && event.animationName==='obaia-wipe-away') reveal();
     });
     if(root.classList.contains('obaia-arriving')) playArrival();
+    addEventListener('obaia:intro-arrival',playArrival);
     addEventListener('pagehide',cancelArrival);
     addEventListener('pageshow',event=>{if(event.persisted) playArrival();});
     const warmed=new Set();
@@ -321,6 +328,10 @@
     });
   }
   document.addEventListener('DOMContentLoaded',()=> {
-    startFruitIntro();initBowl();initReveals();initGallery();initMenu();initTransitions();
+    startFruitIntro();
+    if(!document.body.classList.contains('menu-page')) {
+      initBowl();initReveals();initGallery();initMenu();
+    }
+    initTransitions();
   });
 })();

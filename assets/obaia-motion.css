@@ -72,13 +72,15 @@ html { scroll-padding-top: 105px; }
 .nav-cta:hover { transform: translateY(-3px); }
 
 /* A brief branded curtain links the home page and the menu. */
+html.obaia-arriving,html.obaia-leaving { background:var(--baie,#751b38); }
 .obaia-wipe {
-  position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center;
+  position: fixed; inset: 0; width:100vw; height:100dvh; z-index: 10000; display: grid; place-items: center;
   background: var(--baie,#751b38); transform: translate3d(0,101%,0);
   pointer-events: none; visibility: hidden;
   /* Reset offscreen instantly once the completed curtain is hidden. */
 }
 .obaia-wipe img { width: min(40vw,220px); height: auto; }
+.intro-transition-active .obaia-wipe { z-index:10002; }
 .obaia-leaving .obaia-wipe {
   visibility: visible; transform: translate3d(0,0,0); transition: transform .46s cubic-bezier(.45,0,.36,1);
 }
@@ -106,7 +108,7 @@ html { scroll-padding-top: 105px; }
 .intro-brand { position:absolute; top:7%; left:50%; transform:translateX(-50%); width:clamp(85px,9vw,144px); }
 .fruit-pile { position:absolute; inset:0; overflow:hidden; }
 .fruit-pile > img { position:absolute; height:auto; aspect-ratio:162 / 191; }
-.fruit-intro::after { content:''; position:absolute; inset:0; background:var(--baie); transform:translateY(101%); transition:transform .45s cubic-bezier(.45,0,.35,1); }
+.fruit-intro::after { content:''; position:absolute; inset:0; background:var(--baie) url('./brand/logo-principal-oficial-cream.svg') center / min(40vw,220px) auto no-repeat; transform:translateY(101%); transition:transform .45s cubic-bezier(.45,0,.35,1); }
 .fruit-intro.covered::after { transform:none; }
 .fruit-intro.uncover { transform:translateY(-101%); transition:transform .5s cubic-bezier(.45,0,.28,1); }
 
